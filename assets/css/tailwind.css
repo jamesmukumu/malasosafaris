@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global body styles */
+body {
+  @apply bg-gray-50;
+}
+
+/* Components */
+@layer components {
+  .btn {
+    @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm inline-block;
+  }
+
+  .card {
+    @apply p-3 rounded-md bg-white shadow-md h-full;
+  }
+}
+
+/* Custom utilities for your brand color */
+@layer utilities {
+  /* Text color */
+  .text-pr {
+    @apply text-[#bf4226];
+  }
+
+  /* Background color */
+  .bg-pr {
+    @apply bg-[#bf4226];
+  }
+
+  /* Border color */
+  .border-pr {
+    @apply border-[#bf4226];
+  }
+
+  /* Hover states */
+  .hover\:bg-pr:hover {
+    @apply bg-[#bf4226];
+  }
+
+  .hover\:text-pr:hover {
+    @apply text-[#bf4226];
+  }
+}
