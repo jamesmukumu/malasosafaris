@@ -1,9 +1,8 @@
 <template>
   <header class="w-full sticky top-0 left-0 z-50 bg-white shadow-md">
-    <div class="bg-[#bf4226] text-white py-2 border-b border-[#bf4226]">
-      <div
-        class="container mx-auto px-4 flex justify-between items-center text-sm"
-      >
+    <!-- Top Bar -->
+    <div class="bg-[#bf4226] text-white py-2">
+      <div class="container mx-auto px-4 flex justify-between items-center text-sm">
         <div class="flex items-center space-x-6">
           <div class="flex items-center space-x-2">
             <i class="fa-solid fa-phone text-lg"></i>
@@ -11,85 +10,82 @@
           </div>
           <div class="hidden md:flex items-center space-x-2">
             <i class="fa-regular fa-envelope text-lg"></i>
-            <a href="mailto:info@pjsafaris.com" class="text-white"
-              >info@pjsafaris.com</a
-            >
+            <a href="mailto:info@pjsafaris.com">info@pjsafaris.com</a>
           </div>
         </div>
 
-        <div class="flex items-center space-x-5 text-white">
-          <i
-            class="fa-brands fa-facebook text-xl cursor-pointer transition"
-          ></i>
-          <i
-            class="fa-brands fa-instagram text-xl cursor-pointer transition"
-          ></i>
-          <i class="fa-brands fa-twitter text-xl cursor-pointer transition"></i>
-          <i
-            class="fa-brands fa-linkedin text-xl cursor-pointer transition"
-          ></i>
+        <div class="flex items-center space-x-5">
+          <i class="fa-brands fa-facebook text-xl cursor-pointer"></i>
+          <i class="fa-brands fa-instagram text-xl cursor-pointer"></i>
+          <i class="fa-brands fa-twitter text-xl cursor-pointer"></i>
+          <i class="fa-brands fa-linkedin text-xl cursor-pointer"></i>
         </div>
       </div>
     </div>
 
+    <!-- Main Nav -->
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/">
         <img
           src="https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png"
           alt="Logo"
-          class="h-12 w-auto object-contain"
+          class="h-17 w-auto object-contain"
         />
       </a>
 
+      <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-12 text-base font-medium">
-        <a href="/" class="text-black hover:text-pr transition"> Home </a>
-        <a href="/destinations" class="text-black hover:text-pr transition">
-          Destinations
-        </a>
-        <a
-          href="/adventure/category"
-          class="text-black hover:text-pr transition"
-        >
-          Adventures
-        </a>
-
-        <div class="relative">
-          <a
-            href="/package/category"
-            class="flex items-center text-black hover:text-pr transition"
-          >
-            Safaris
-          </a>
-        </div>
-
-        <div class="relative">
-          <a
-            href="/hotels"
-            class="flex items-center text-black hover:text-pr transition"
-          >
-            Hotels
-          </a>
-        </div>
-
-        <a href="/about/us" class="text-black hover:text-pr transition">
-          About Us
-        </a>
+        <a href="/" class="hover:text-[#bf4226]">Home</a>
+        <a href="/destinations" class="hover:text-[#bf4226]">Destinations</a>
+        <a href="/adventure/category" class="hover:text-[#bf4226]">Adventures</a>
+        <a href="/package/category" class="hover:text-[#bf4226]">Safaris</a>
+        <NuxtLink to="/hotels" class="hover:text-[#bf4226]">Hotels</NuxtLink>
+        <a href="/about/us" class="hover:text-[#bf4226]">About Us</a>
       </nav>
 
-      <button class="lg:hidden text-black text-3xl">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
-          fill="#000000"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-        </svg>
+      <!-- Hamburger -->
+      <button @click="toggleMenu" class="lg:hidden text-3xl">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </header>
+
+  <!-- Overlay -->
+  <div
+    v-if="isOpen"
+    @click="toggleMenu"
+    class="fixed inset-0 bg-black/50 z-40 transition-opacity"
+  ></div>
+
+  <!-- Sidebar -->
+  <aside
+    :class="[
+      'fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform transition-transform duration-300',
+      isOpen ? 'translate-x-0' : 'translate-x-full'
+    ]"
+  >
+    <div class="flex justify-between items-center p-6 border-b">
+      <h2 class="text-lg font-semibold">Menu</h2>
+      <button @click="toggleMenu" class="text-2xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <ul class="flex flex-col p-6 space-y-6 text-lg font-medium">
+      <li><NuxtLink to="/" @click="toggleMenu">Home</NuxtLink></li>
+     
+      <li><NuxtLink to="/hotels"  >Hotels</NuxtLink></li>
+      
+    </ul>
+  </aside>
 </template>
 
-<script styled></script>
+<script setup>
+import { ref } from "vue"
+
+const isOpen = ref(false)
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value
+}
+</script>

@@ -21,7 +21,14 @@ export default defineNuxtConfig({
   },
   runtimeConfig:{
     public:{
-     baseUrl:"https://pjsafarisserver.onrender.com/api"
+     baseUrl:"https://pjsafarisserver-production.up.railway.app/api"
+    },
+    db:{
+        host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      user: process.env.DB_USER,
+      password:process.env.DB_PASS,
+      database: process.env.DB_DATABASE
     }
   }
 })
