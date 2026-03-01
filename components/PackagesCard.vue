@@ -2,7 +2,7 @@
    <div class="w-full grid place-content-center">
        <div
      
-      class="mt-4 flex flex-wrap justify-start gap-4"
+      class="mt-4 flex flex-wrap justify-center gap-4"
     >
       <div
         v-for="jeepPackage in packages"
@@ -26,13 +26,18 @@
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
             {{ jeepPackage.packageTitle }}
           </h3>
+               <div
+                v-html="jeepPackage.PackageOverview"
+                class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3"
+              ></div>
         </a>
 
         <div class="flex justify-between items-center mt-auto pt-2">
           <p class="text-m font-medium text-gray-700 dark:text-gray-400">
             From
             <span class="font-bold">
-              {{ jeepPackage.PackageCharge }}
+              {{ PriceFormatter(jeepPackage.PackageCharge) }}
+
               {{ jeepPackage.PackageChargeCurrency }}
             </span>
           </p>
@@ -50,10 +55,15 @@
 </template>
 
 <script setup>
+import { priceFormatter } from '#imports';
+
 defineProps({
 packages:{
 type:Array,
 required:true
 }
 })
+let PriceFormatter = priceFormatter
+
+
 </script>
