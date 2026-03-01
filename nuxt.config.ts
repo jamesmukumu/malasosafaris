@@ -3,9 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: [ 
-    
+
     '@nuxt/ui',
-    '@nuxtjs/seo'],
+    '@nuxtjs/seo'
+  ],
     css:['~/assets/css/main.css'],
   
   app:{

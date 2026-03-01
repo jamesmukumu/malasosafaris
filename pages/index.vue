@@ -2,6 +2,42 @@
   <div>
     <Header />
 
+<section>
+  <UCarousel
+    v-slot="{ item }"
+    loop
+    :autoplay="{ delay: 4000 }"
+    wheel-gestures
+    fade
+    :items="homeImages"
+    :ui="{
+        container: 'w-full !mx-0 !px-0',
+    item: 'basis-full !ps-0 !pe-0',
+    track: '!gap-0',
+    prev: 'left-4',
+    next: 'right-4'
+    }"
+  >
+    <div class="relative w-full">
+
+      <!-- Image -->
+      <img
+        :src="item.url"
+        class="w-full h-[500px] object-cover"
+      />
+
+      <!-- Centered Button -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <NuxtLink to="/" class="bg-pr text-white px-6 py-3 rounded-lg shadow-lg hover:bg-pr transition">
+          Book A Safari
+        </NuxtLink>
+      </div>
+
+    </div>
+  </UCarousel>
+</section>
+
+
     <section class="bg-white py-12">
       <div
         class="container mx-auto px-6 flex flex-col md:flex-row items-center"
@@ -103,8 +139,12 @@
 <script setup>
 import Footer from "~/components/Footer.vue";
 
-const { data, pending, error } = await useFetch("/api/home");
 
+const { data, pending, error } = await useFetch("/api/home");
+var imgs = await useFetch("/api/cloudinary")
 const jeepPackages = computed(() => data.value?.data || []);
+let homeImages = imgs.data.value.images ?? []
+
+
 
 </script>

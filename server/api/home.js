@@ -1,4 +1,5 @@
 // server/api/home.js
+
 export default defineEventHandler(async (event) => {
   try {
     const config = useRuntimeConfig(event)
