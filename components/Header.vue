@@ -36,7 +36,7 @@
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-12 text-base font-medium">
         <a href="/" class="hover:text-[#bf4226]">Home</a>
-        <a href="/destinations" class="hover:text-[#bf4226]">Destinations</a>
+        <NuxtLink to="/destinations" class="hover:text-[#bf4226]">Destinations</NuxtLink>
         <a href="/adventure/category" class="hover:text-[#bf4226]">Adventures</a>
         <a href="/package/category" class="hover:text-[#bf4226]">Safaris</a>
         <NuxtLink to="/hotels" class="hover:text-[#bf4226]">Hotels</NuxtLink>
@@ -75,7 +75,8 @@
       <li><NuxtLink to="/" @click="toggleMenu">Home</NuxtLink></li>
      
       <li><NuxtLink to="/hotels"  >Hotels</NuxtLink></li>
-      
+       <li><NuxtLink to="/destinations" >Destinations</NuxtLink></li>
+        <li><NuxtLink to="/blogs"  >Blogs</NuxtLink></li>
     </ul>
   </aside>
 </template>

@@ -15,6 +15,7 @@
     "@primeuix/themes": "^2.0.3",
     "cloudinary": "^2.9.0",
     "nuxt": "^4.3.1",
+    "nuxt-easy-lightbox": "^1.1.0",
     "pg": "^8.19.0",
     "primevue": "^4.5.4",
     "tailwindcss-primeui": "^0.6.1",

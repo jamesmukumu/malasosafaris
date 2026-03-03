@@ -110,13 +110,13 @@
             >
               Attractions
             </a>
-            <a
-              target="_blank"
-              href="/blogs"
+            <NuxtLink
+              
+              to="/blogs"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Travel Posts
-            </a>
+            </NuxtLink>
           </div>
         </div>
 
@@ -140,7 +140,7 @@
 
             <a
               target="_blank"
-              href="https://www.olankasafaris.com/jobs"
+              href=""
               class="transition-colors text-white duration-300 hover:underline"
             >
               Careers

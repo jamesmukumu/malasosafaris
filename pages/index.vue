@@ -2,41 +2,209 @@
   <div>
     <Header />
 
-<section>
-  <UCarousel
-    v-slot="{ item }"
-    loop
-    :autoplay="{ delay: 4000 }"
-    wheel-gestures
-    fade
-    :items="homeImages"
-    :ui="{
-        container: 'w-full !mx-0 !px-0',
-    item: 'basis-full !ps-0 !pe-0',
-    track: '!gap-0',
-    prev: 'left-4',
-    next: 'right-4'
-    }"
-  >
-    <div class="relative w-full">
+    <section>
+      <UCarousel
+        v-slot="{ item }"
+        loop
+        :autoplay="{ delay: 4000 }"
+        wheel-gestures
+        fade
+        :items="homeImages"
+        :ui="{
+          container: 'w-full !mx-0 !px-0',
+          item: 'basis-full !ps-0 !pe-0',
+          track: '!gap-0',
+          prev: 'left-4',
+          next: 'right-4',
+        }"
+      >
+        <div class="relative w-full">
+          <!-- Image -->
+          <img :src="item.url" class="w-full h-[500px] object-cover" />
 
-      <!-- Image -->
-      <img
-        :src="item.url"
-        class="w-full h-[500px] object-cover"
-      />
+          <!-- Centered Button -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <NuxtLink
+              to="/"
+              class="bg-pr text-white px-6 py-3 rounded-lg shadow-lg hover:bg-pr transition"
+            >
+              Book A Safari
+            </NuxtLink>
+          </div>
+        </div>
+      </UCarousel>
+    </section>
 
-      <!-- Centered Button -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <NuxtLink to="/" class="bg-pr text-white px-6 py-3 rounded-lg shadow-lg hover:bg-pr transition">
-          Book A Safari
-        </NuxtLink>
+    <section class="m-4">
+      <h2
+        class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
+      >
+        Top Attractions In Africa
+      </h2>
+      <div class="w-24 h-1 bg-pr mx-auto mb-2"></div>
+      <div class="mx-auto w-full px-4 py-12">
+        <div
+          class="grid place-content-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          <div
+            class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
+          >
+            <img
+              src="/images/home/Warriors-Academy-Saruni-Samburu.jpg"
+              alt="Samburu-Saruni"
+              class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="p-4 flex flex-col flex-1">
+              <h3 class="text-lg font-semibold">Mt Kenya & Kilimanjaro</h3>
+              <p class="mt-2 text-sm text-gray-600 flex-1">
+                Conquer Africa’s tallest mountains with our Expert Guides.
+              </p>
+              <a
+                href="/package/category"
+                class="mt-3 inline-flex items-center text-pr"
+              >
+                More Info →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
+          >
+            <img
+              alt="maasai-mara"
+              src="/images/home/Coastal-Paradise.jpg"
+              class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="p-4 flex flex-col flex-1">
+              <h3 class="text-lg font-semibold">Masai Mara Migration</h3>
+              <p class="mt-2 text-sm text-gray-600 flex-1">
+                Witness the Magical Annual Wildebeest Migration.
+              </p>
+              <a
+                href="/package/category"
+                class="mt-3 inline-flex items-center text-pr"
+              >
+                More Info →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
+          >
+            <img
+              alt="maasai-mara"
+              src="/images/home/Lion-maasai-mara (4).jpg"
+              class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="p-4 flex flex-col flex-1">
+              <h3 class="text-lg font-semibold">Coastal Sandy Beaches</h3>
+              <p class="mt-2 text-sm text-gray-600 flex-1">
+                Explore Kenya`s` Sandy White Coastal Beaches .
+              </p>
+              <a
+                href="/package/category"
+                class="mt-3 inline-flex items-center text-pr"
+              >
+                More Info →
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </UCarousel>
-</section>
+    <!--  -->
 
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+          <h2
+            class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide"
+          >
+            Camps in Maasai Mara
+          </h2>
+
+          <p class="mt-6 text-lg leading-relaxed text-gray-600">
+            A myriad of accommodation options is available in Maasai Mara. From
+            adventurous mobile tented camps following the Great Migration to
+            family-oriented lodge style accommodations and anything in between,
+            you can be sure to find the perfect spot just for you.
+          </p>
+
+          <div class="w-32 h-[1px] bg-yellow-700/60 mt-8 mx-auto"></div>
+        </div>
+
+        <div class="flex flex-wrap gap-6 items-stretch">
+          <a
+            href="/hotel/Zebra-Plains-Mara-Camp"
+            class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/home/zebra.jpg"
+                class="w-full h-full object-cover hover:scale-105 transition duration-700"
+                alt="zebra-plains-camp"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-light text-gray-900 mb-3">
+                Zebra Plains Mara Camp
+              </h3>
+              <p class="text-gray-600 flex-grow">
+                Zebra Plains Mara Camp is located inside the Maasai Mara
+                National Reserve in Kenya, within a prime wildlife viewing area.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/hotel/Saruni-Mara-BaseCamp"
+            class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/home/Saruni Mara.jpg"
+                class="w-full h-full object-cover hover:scale-105 transition duration-700"
+                alt="Saruni-Mara"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-light text-gray-900 mb-3">
+                Saruni Mara
+              </h3>
+              <p class="text-gray-600 flex-grow">
+                Saruni Mara is a boutique lodge offering an exclusive and
+                luxurious safari experience.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/hotel/Angama-Mara-Lodge"
+            class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/home/angama-mara (2).png"
+                class="w-full h-full object-cover hover:scale-105 transition duration-700"
+                alt="angama-mara"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-light text-gray-900 mb-3">
+                Angama Mara
+              </h3>
+              <p class="text-gray-600 flex-grow">
+                Perched high above the Great Rift Valley, Angama Mara offers
+                breathtaking views over the Masai Mara plains.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section class="bg-white py-12">
       <div
@@ -74,10 +242,12 @@
         </div>
       </div>
     </section>
-     <h2 class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4">
-        Top Safaris For You
-      </h2>
-      <div class="w-24 h-1 bg-pr mx-auto mb-2"></div>
+    <h2
+      class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
+    >
+      Top Safaris For You
+    </h2>
+    <div class="w-24 h-1 bg-pr mx-auto mb-2"></div>
     <div v-if="pending" class="text-center mt-10">Loading packages...</div>
 
     <!-- Error State -->
@@ -92,7 +262,6 @@
 
     <section class="bg-[#f6f8fb] text-gray-800 px-6 py-12 md:px-16 lg:px-24">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
-      
         <div class="md:w-1/2 flex flex-col justify-center">
           <h1 class="text-4xl md:text-5xl font-bold text-[#bf4226] mb-4">
             Welcome to PJ Safaris
@@ -102,7 +271,6 @@
           </h2>
         </div>
 
-      
         <div class="md:w-1/2 space-y-6 text-lg md:text-xl leading-relaxed">
           <p>
             Over half a decade under the African sun, etched in memories,
@@ -132,6 +300,11 @@
         </div>
       </div>
     </section>
+
+    <section>
+<BlogsCard :main-blogs="mainBlogs" :other-blogs="otherBlogs"/>
+
+    </section>
     <Footer />
   </div>
 </template>
@@ -139,12 +312,13 @@
 <script setup>
 import Footer from "~/components/Footer.vue";
 
-
 const { data, pending, error } = await useFetch("/api/home");
-var imgs = await useFetch("/api/cloudinary")
-const jeepPackages = computed(() => data.value?.data || []);
-let homeImages = imgs.data.value.images ?? []
-
-
-
+console.log(data.value)
+var imgs = await useFetch("/api/cloudinary");
+const jeepPackages = computed(() => data.value?.packages.data || []);
+const blogs = computed(()=>data.value?.blogs || [])
+const mainBlogs = computed(()=>blogs.value.slice(0,2))
+var otherBlogs = computed(()=>blogs.value.slice(2))
+console.log(otherBlogs)
+let homeImages = imgs.data.value.images ?? [];
 </script>
