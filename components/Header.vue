@@ -25,17 +25,17 @@
 
     <!-- Main Nav -->
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/">
+      <NuxtLink to="/">
         <img
           src="https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png"
           alt="Logo"
           class="h-17 w-auto object-contain"
         />
-      </a>
+      </NuxtLink>
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-12 text-base font-medium">
-        <a href="/" class="hover:text-[#bf4226]">Home</a>
+        <NuxtLink to="/" class="hover:text-[#bf4226]">Home</NuxtLink>
         <NuxtLink to="/destinations" class="hover:text-[#bf4226]">Destinations</NuxtLink>
         <a href="/adventure/category" class="hover:text-[#bf4226]">Adventures</a>
         <a href="/package/category" class="hover:text-[#bf4226]">Safaris</a>

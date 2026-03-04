@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxtjs/seo', 'nuxt-easy-lightbox'],
+  modules: ['@nuxt/ui', '@nuxtjs/seo', 'nuxt-easy-lightbox', '@nuxt/icon'],
     css:['~/assets/css/main.css'],
   
   app:{

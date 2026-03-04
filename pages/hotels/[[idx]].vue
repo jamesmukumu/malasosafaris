@@ -36,7 +36,7 @@
 
         <div class="flex flex-wrap justify-center gap-6 items-stretch">
           <NuxtLink
-          to="/login"
+          :to="`/hotel/${hotel.slug}`"
             v-for="hotel in hotels"
             :key="hotel.id"
             class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]"
@@ -56,17 +56,94 @@
                 v-html="hotel.hotel_overview"
                 class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3"
               ></div>
+
+    <span v-if="hotel.ratings == 5" class="absolute top-2 right-2 bg-green-600 text-white text-m px-2 py-1 rounded">
+            Top Pick <Icon name="material-symbols:kid-star-outline" />
+      </span>
             </div>
           
           </NuxtLink>
         </div>
       </div>
     </section>
+
+      <div class="flex justify-center my-10">
+      <UPagination
+        v-model:page="currentPage"
+        :items-per-page="limit"
+        :total="total"
+        :to="toLink"
+        :sibling-count="1"
+        show-edges
+        color="green"
+        variant="solid"
+      />
+    </div>
+
+    <Footer/>
   </div>
 </template>
 
+
+
+
+
 <script setup>
-var { data:hotels, pending } = await useFetch("/api/hotels");
 
 
+const route = useRoute()
+const router = useRouter()
+
+const limit = 6
+
+/* -------------------------
+   Writable current page from route param
+-------------------------- */
+const currentPage = computed({
+  get() {
+    const p = parseInt(route.params.idx)
+    return !p || p < 1 ? 1 : p
+  },
+  set(value) {
+    if (value === 1) {
+      router.push('/hotels') // keep page 1 clean
+    } else {
+      router.push(`/hotels/${value}`)
+    }
+  }
+})
+
+/* -------------------------
+   Fetch blogs from API based on page
+-------------------------- */
+const { data,pending,error } = await useFetch(() => `/api/hotels?page=${currentPage.value}`)
+console.error(error.value)
+/* -------------------------
+   Extract reactive data
+-------------------------- */
+const hotels = computed(() => data.value?.hotels ?? [])
+const total = computed(() => data.value?.count ?? 0)
+
+/* -------------------------
+   Calculate max pages
+-------------------------- */
+const maxPage = computed(() => Math.ceil(total.value / limit))
+
+/* -------------------------
+   Throw error if page is invalid
+-------------------------- */
+if (isNaN(currentPage.value) || currentPage.value < 1 || currentPage.value > maxPage.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found'
+  })
+}
+
+/* -------------------------
+   Link generator using route params
+-------------------------- */
+function toLink(page) {
+  if (page === 1) return '/hotels'
+  return `/hotels/${page}`
+}
 </script>
