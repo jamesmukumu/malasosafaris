@@ -28,6 +28,7 @@
         <RecommendationBlogs :blogs="relatedBlogs"/>
       </aside>
     </div>
+    <Footer/>
   </div>
 </template>
 

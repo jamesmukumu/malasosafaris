@@ -37,10 +37,16 @@
       <nav class="hidden lg:flex items-center gap-12 text-base font-medium">
         <NuxtLink to="/" class="hover:text-[#bf4226]">Home</NuxtLink>
         <NuxtLink to="/destinations" class="hover:text-[#bf4226]">Destinations</NuxtLink>
-        <a href="/adventure/category" class="hover:text-[#bf4226]">Adventures</a>
+        <NuxtLink to="/adventure/category" class="hover:text-[#bf4226]">Adventures</NuxtLink>
         <a href="/package/category" class="hover:text-[#bf4226]">Safaris</a>
         <NuxtLink to="/hotels" class="hover:text-[#bf4226]">Hotels</NuxtLink>
         <a href="/about/us" class="hover:text-[#bf4226]">About Us</a>
+          <a
+                    href="/contact"
+                    class="px-6 py-2 rounded bg-[#bf4226] hover:bg-[#a8361f] transition text-sm font-semibold text-white"
+                  >
+                    Contact Us
+                  </a>
       </nav>
 
       <!-- Hamburger -->

@@ -305,6 +305,9 @@
 <BlogsCard :main-blogs="mainBlogs" :other-blogs="otherBlogs"/>
 
     </section>
+    <div>
+      <Patners/>
+    </div>
     <Footer />
   </div>
 </template>

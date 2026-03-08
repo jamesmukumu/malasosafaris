@@ -12,7 +12,7 @@
       </h1>
     </div>
 
-    <!-- section for hotels card -->
+    
 
     <section class="py-4 bg-white" v-if="!pending">
       <div class="max-w-7xl mx-auto px-6">
