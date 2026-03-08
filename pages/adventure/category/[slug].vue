@@ -31,7 +31,7 @@
 
         <div class="flex flex-wrap gap-6 items-stretch">
           <NuxtLink
-            
+          :to="`/experience/${adv.slug}`"
             :key="adv.id"
             v-for="adv in adventure.adventures"
             class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]"
@@ -58,14 +58,13 @@
                 <span className="font-bold">{{pricer(adv.adventure_charges)}}</span>
               </p>
 
-              <NuxtLink
+              <span
                
-                target="_blank"
-                rel="noopener noreferrer"
+               
                 className="text-sm font-semibold text-pr hover:underline"
               >
                 View Adventure
-              </NuxtLink>
+              </span>
             </div>
           </NuxtLink>
         </div>

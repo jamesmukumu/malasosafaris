@@ -82,6 +82,8 @@
      
       <li><NuxtLink to="/hotels"  >Hotels</NuxtLink></li>
        <li><NuxtLink to="/destinations" >Destinations</NuxtLink></li>
+       <li><NuxtLink to="/adventure/category" >Adventures</NuxtLink></li>
+       <li><NuxtLink to="/attractions" >Attractions</NuxtLink></li>
         <li><NuxtLink to="/blogs"  >Blogs</NuxtLink></li>
     </ul>
   </aside>
