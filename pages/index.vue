@@ -308,6 +308,7 @@
     <div>
       <Patners/>
     </div>
+  
     <Footer />
   </div>
 </template>

@@ -38,7 +38,7 @@
         <NuxtLink to="/" class="hover:text-[#bf4226]">Home</NuxtLink>
         <NuxtLink to="/destinations" class="hover:text-[#bf4226]">Destinations</NuxtLink>
         <NuxtLink to="/adventure/category" class="hover:text-[#bf4226]">Adventures</NuxtLink>
-        <a href="/package/category" class="hover:text-[#bf4226]">Safaris</a>
+        <NuxtLink to="/package/category" class="hover:text-[#bf4226]">Safaris</NuxtLink>
         <NuxtLink to="/hotels" class="hover:text-[#bf4226]">Hotels</NuxtLink>
         <a href="/about/us" class="hover:text-[#bf4226]">About Us</a>
           <a
@@ -79,7 +79,7 @@
 
     <ul class="flex flex-col p-6 space-y-6 text-lg font-medium">
       <li><NuxtLink to="/" @click="toggleMenu">Home</NuxtLink></li>
-     
+      <li><NuxtLink to="/package/category">Safaris</NuxtLink></li>     
       <li><NuxtLink to="/hotels"  >Hotels</NuxtLink></li>
        <li><NuxtLink to="/destinations" >Destinations</NuxtLink></li>
        <li><NuxtLink to="/adventure/category" >Adventures</NuxtLink></li>

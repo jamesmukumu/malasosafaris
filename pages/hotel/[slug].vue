@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full overflow-x-hidden">
     <Header />
 
     <div class="w-full overflow-x-hidden bg-white">
@@ -55,7 +55,7 @@
           />
         </div>
 
-        <aside class="w-full lg:flex-1 lg:max-w-[450px] xl:max-w-[500px]">
+        <aside class="w-full overflow-x-hidden lg:flex-1 lg:max-w-[450px] xl:max-w-[500px]">
           <BookingsCard :hotel="hotel" :message="`Hello PJ Safaris, i would wish to get a quote/book ${hotel.hotel_name}`" />
         </aside>
       </div>

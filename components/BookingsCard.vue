@@ -10,6 +10,9 @@ const today = new Date().toISOString().split('T')[0]
 const save = ref(false)
 const isLoaded = ref(false)
 
+
+
+
 const coordinates = JSON.parse(props.hotel.hotel_coordinates)
 
 /* -----------------------
@@ -27,7 +30,13 @@ const form = reactive({
   Nationality: '',
   message: props.message || ''
 })
-
+function handleMapReady(map) {
+  isLoaded.value = true
+  // Force Mapbox to recalculate size after layout is done
+  nextTick(() => {
+    map.resize()
+  })
+}
 const errors = reactive({})
 
 /* -----------------------
@@ -98,7 +107,7 @@ function handleReady() {
 </script>
 
 <template>
-  <div class="bg-[#f0f0f0] py-14 px-4 md:px-10">
+  <div class="bg-[#f0f0f0] py-14 px-4 md:px-10 overflow-x-hidden w-full">
 
     <!-- CARD -->
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-10">
@@ -243,24 +252,34 @@ function handleReady() {
 
       </form>
     </div>
+<div class="w-full h-[450px] mt-10 overflow-hidden">
 
-    <!-- MAP -->
-    <!-- <div class="max-w-4xl mx-auto mt-12">
-      <h3 class="text-xl font-semibold text-center mb-4">
-        Locate {{ hotel.hotel_name }}
-      </h3>
+  
+ <!-- In BookingsCard.vue -->
+<div class="w-full h-[450px] mt-10 overflow-hidden">
+  <ClientOnly>
+    <MapboxMap
+      map-id="hotel-map"
+      class="w-full h-full"
+      :options="{
+        style: 'mapbox://styles/mapbox/light-v11',
+        center: [coordinates.longitude, coordinates.latitude],
+        zoom: 8
+      }"
+      @ready="handleMapReady"   
+    >
+      <MapboxDefaultMarker
+        marker-id="hotel-marker"
+        :lnglat="[coordinates.longitude, coordinates.latitude]" 
+        :options="{ color: 'red' }"
+      />
+    </MapboxMap>
+  </ClientOnly>
+</div>
 
-      <div class="w-full h-[420px] rounded-xl overflow-hidden shadow-md">
-        <ScriptGoogleMaps
-          :center="mapCenter"
-          :markers="[`${coordinates.latitude},${coordinates.longitude}`]"
-          api-key="AIzaSyADPUmFG2DjzLmCZ3vf29Nc8DR4EMa4Eqk"
-          class="w-full h-full"
-          above-the-fold
-          @ready="handleReady"
-        />
-      </div>
-    </div> -->
+</div>
 
   </div>
 </template>
+
+
