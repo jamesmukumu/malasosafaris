@@ -20,7 +20,7 @@
       >
         <div class="relative w-full">
           <!-- Image -->
-          <img :src="item.url" class="w-full h-[500px] object-cover" />
+          <img :src="item.url" alt="pj-safaris" class="w-full h-[500px] object-cover" />
 
           <!-- Centered Button -->
           <div class="absolute inset-0 flex items-center justify-center">
@@ -35,6 +35,43 @@
       </UCarousel>
     </section>
 
+
+
+     <section class="bg-white py-12">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 md:pr-12">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
+            PJ Safaris
+          </h1>
+          <p class="mt-4 text-lg text-gray-600">
+       PJ Safaris is a leading tours and travel company in Kenya, specializing in unforgettable safari experiences across the country’s most iconic destinations. From the world-famous Maasai Mara to Amboseli, Tsavo, and Kenya’s stunning coastal regions, we create expertly planned tours that showcase the beauty of Africa’s wildlife, landscapes, and culture.
+
+With a team of experienced travel professionals, PJ Safaris offers personalized itineraries, reliable service, and seamless travel planning for individuals, families, and groups. Whether you're looking for a luxury safari, a wildlife adventure, or a relaxing holiday, PJ Safaris is committed to delivering authentic Kenyan safari experiences and memories that last a lifetime.
+          </p>
+          <NuxtLink
+            to="/"
+            type="button"
+            class="inline-block mt-6 px-6 py-3 bg-pr hover:bg-pr text-white font-semibold rounded-lg shadow transition"
+          >
+            Contact Us
+          </NuxtLink>
+        </div>
+        <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+          <img
+            src="https://res.cloudinary.com/dasrniwpk/image/upload/v1764569574/packages/gl7jr0qvgtpdpxwxtipk.webp"
+            alt="Lions-Maasai-Mara"
+            class="w-full"
+          />
+        </div>
+      </div>
+    </section>
+
+
+
+
+
     <section class="m-4">
       <h2
         class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
@@ -46,7 +83,8 @@
         <div
           class="grid place-content-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          <div
+          <NuxtLink
+          to="/package/category"
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
@@ -59,16 +97,17 @@
               <p class="mt-2 text-sm text-gray-600 flex-1">
                 Conquer Africa’s tallest mountains with our Expert Guides.
               </p>
-              <a
-                href="/package/category"
+              <span
+              
                 class="mt-3 inline-flex items-center text-pr"
               >
                 More Info →
-              </a>
+              </span>
             </div>
-          </div>
+          </NuxtLink>
 
-          <div
+          <NuxtLink
+          to="/package/category"
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
@@ -81,16 +120,16 @@
               <p class="mt-2 text-sm text-gray-600 flex-1">
                 Witness the Magical Annual Wildebeest Migration.
               </p>
-              <a
+              <span
                 href="/package/category"
                 class="mt-3 inline-flex items-center text-pr"
               >
                 More Info →
-              </a>
+              </span>
             </div>
-          </div>
+          </NuxtLink>
 
-          <div
+          <NuxtLink
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
@@ -103,18 +142,40 @@
               <p class="mt-2 text-sm text-gray-600 flex-1">
                 Explore Kenya`s` Sandy White Coastal Beaches .
               </p>
-              <a
-                href="/package/category"
+              <span
+             
                 class="mt-3 inline-flex items-center text-pr"
               >
                 More Info →
-              </a>
+              </span>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
 
+
+
+
+
+    
+    <h2
+      class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
+    >
+      Top Safaris For You
+    </h2>
+    <div class="w-24 h-1 bg-pr mx-auto mb-2"></div>
+    <div v-if="pending" class="text-center mt-10">Loading packages...</div>
+
+    <!-- Error State -->
+    <div v-else-if="error" class="text-center mt-10 text-red-500">
+      Something went wrong loading packages.
+    </div>
+
+    <!-- Packages -->
+    <div v-else>
+      <PackagesCard :packages="packages" />
+    </div>
     <!--  -->
 
     <section class="py-24 bg-white">
@@ -137,8 +198,8 @@
         </div>
 
         <div class="flex flex-wrap gap-6 items-stretch">
-          <a
-            href="/hotel/Zebra-Plains-Mara-Camp"
+          <NuxtLink
+            to="/hotel/Zebra-Plains-Mara-Camp"
             class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
@@ -157,10 +218,10 @@
                 National Reserve in Kenya, within a prime wildlife viewing area.
               </p>
             </div>
-          </a>
+          </NuxtLink>
 
-          <a
-            href="/hotel/Saruni-Mara-BaseCamp"
+          <NuxtLink
+            to="/hotel/Saruni-Mara-BaseCamp"
             class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
@@ -179,10 +240,10 @@
                 luxurious safari experience.
               </p>
             </div>
-          </a>
+          </NuxtLink>
 
-          <a
-            href="/hotel/Angama-Mara-Lodge"
+          <NuxtLink
+            to="/hotel/Angama-Mara-Lodge"
             class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
@@ -201,64 +262,12 @@
                 breathtaking views over the Masai Mara plains.
               </p>
             </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white py-12">
-      <div
-        class="container mx-auto px-6 flex flex-col md:flex-row items-center"
-      >
-        <div class="md:w-1/2 md:pr-12">
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
-            PJ Safari`s Royalty Program
-          </h1>
-          <p class="mt-4 text-lg text-gray-600">
-            At PJ Safaris, we truly appreciate the travelers who continue to
-            choose us for their adventures. Our Royalty Program is our way of
-            saying thank you to our loyal customers. As a member, you’ll enjoy
-            special offers, exclusive benefits, and personalized service
-            designed to make every safari even more rewarding. We are committed
-            to giving you memorable experiences, seamless travel planning, and
-            extra value every time you journey with us. With PJ Safaris, your
-            loyalty means more — and every trip is a chance to experience
-            something special.
-          </p>
-          <NuxtLink
-            to="/login"
-            type="button"
-            class="inline-block mt-6 px-6 py-3 bg-pr hover:bg-pr text-white font-semibold rounded-lg shadow transition"
-          >
-            Join Us
           </NuxtLink>
         </div>
-        <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
-          <img
-            src="https://res.cloudinary.com/dasrniwpk/image/upload/v1764569574/packages/gl7jr0qvgtpdpxwxtipk.webp"
-            alt="Parent holding baby"
-            class="w-full"
-          />
-        </div>
       </div>
     </section>
-    <h2
-      class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
-    >
-      Top Safaris For You
-    </h2>
-    <div class="w-24 h-1 bg-pr mx-auto mb-2"></div>
-    <div v-if="pending" class="text-center mt-10">Loading packages...</div>
 
-    <!-- Error State -->
-    <div v-else-if="error" class="text-center mt-10 text-red-500">
-      Something went wrong loading packages.
-    </div>
-
-    <!-- Packages -->
-    <div v-else>
-      <PackagesCard :packages="jeepPackages" />
-    </div>
+   
 
     <section class="bg-[#f6f8fb] text-gray-800 px-6 py-12 md:px-16 lg:px-24">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
@@ -317,12 +326,12 @@
 import Footer from "~/components/Footer.vue";
 
 const { data, pending, error } = await useFetch("/api/home");
-console.log(data.value)
+
 var imgs = await useFetch("/api/cloudinary");
-const jeepPackages = computed(() => data.value?.packages.data || []);
+const packages = computed(() => data.value?.packages || []);
 const blogs = computed(()=>data.value?.blogs || [])
 const mainBlogs = computed(()=>blogs.value.slice(0,2))
 var otherBlogs = computed(()=>blogs.value.slice(2))
-console.log(otherBlogs)
+
 let homeImages = imgs.data.value.images ?? [];
 </script>

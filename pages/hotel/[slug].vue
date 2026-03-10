@@ -6,7 +6,7 @@
       <div
         class="flex flex-col lg:flex-row justify-between items-start gap-8 w-full max-w-[1300px] mx-auto bg-white shadow-lg rounded-xl p-4 sm:p-8 m-2 sm:m-5"
       >
-        <div class="flex flex-col gap-6 flex-[2] min-w-0 max-w-full">
+        <div class="flex flex-col gap-6 flex-[2] min-w-0 max-w-full overflow-x-hidden">
           <h1 class="text-3xl text-center font-bold">
             {{ hotel.hotel_name }}
           </h1>

@@ -15,7 +15,7 @@ export default eventHandler(async (event) => {
         ON p.destination_id = d.id
      WHERE d.published = true
      GROUP BY d.id
-     ORDER BY d.created_at DESC
+     ORDER BY d.created_at ASC
      LIMIT $1 OFFSET $2`,
     [limit, offset]
   )

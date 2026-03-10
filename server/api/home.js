@@ -4,16 +4,15 @@ import { pool } from "../utils/pool"
 
 export default defineEventHandler(async (event) => {
   try {
-    const config = useRuntimeConfig(event)
-    const { baseUrl } = config.public
+  
 
-    const response = await $fetch(`${baseUrl}/fetch/package/active`)
-     var {rows} = await pool.query("SELECT * FROM blogs WHERE published = true ORDER BY created_at DESC  LIMIT 6")
-
+   
+    var {rows} = await pool.query("SELECT * FROM blogs WHERE published = true ORDER BY created_at DESC  LIMIT 6")
+    let {rows:packages} = await pool.query("SELECT * FROM packages WHERE published = true ORDER BY created_at ASC LIMIT 12")
     // console.log("SERVER RESPONSE:", response)
 
     return {
-    "packages":response,
+    "packages":packages,
     "blogs":rows
     }
   } catch (err) {

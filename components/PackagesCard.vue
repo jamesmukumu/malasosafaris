@@ -5,8 +5,8 @@
       class="mt-4 flex flex-wrap justify-center gap-4"
     >
       <div
-        v-for="jeepPackage in packages"
-        :key="jeepPackage.id"
+        v-for="pck in packages"
+        :key="pck.id"
         class="
           grow-0 shrink-0
           basis-full sm:basis-[48%] md:basis-[31%]
@@ -16,38 +16,38 @@
           flex flex-col 
         "
       >
-        <a href="">
+        <NuxtLink :to="`/tour/${pck.package_slug}`">
           <img
-            :src="jeepPackage.PackagePhoto"
-            alt=""
+            :src="pck.package_photo"
+            :alt="pck.package_slug"
             class="w-full h-52 object-cover rounded mb-4"
           />
 
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-            {{ jeepPackage.packageTitle }}
+            {{ pck.package_title }}
           </h3>
                <div
-                v-html="jeepPackage.PackageOverview"
+                v-html="pck.package_overview"
                 class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3"
               ></div>
-        </a>
+        </NuxtLink>
 
         <div class="flex justify-between items-center mt-auto pt-2">
           <p class="text-m font-medium text-gray-700 dark:text-gray-400">
             From
             <span class="font-bold">
-              {{ PriceFormatter(jeepPackage.PackageCharge) }}
+              {{ PriceFormatter(pck.package_charge) }}
 
-              {{ jeepPackage.PackageChargeCurrency }}
+              {{ pck.package_charge_currency }}
             </span>
           </p>
 
-          <a
-            href=""
+          <span
+          
             class="text-sm  text-pr hover:underline"
           >
             View Package
-          </a>
+          </span>
         </div>
       </div>
     </div>

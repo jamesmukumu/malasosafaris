@@ -12,10 +12,10 @@
         :key="pck.id"
         class="grow-0 shrink-0 basis-full sm:basis-[48%] md:basis-[31%] bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-3 cursor-pointer flex flex-col"
       >
-        <a href="">
+        <NuxtLink :to="`/tour/${pck.package_slug}`">
           <img
             :src="pck.package_photo"
-            alt=""
+            :alt="pck.package_slug"
             class="w-full h-52 object-cover rounded mb-4"
           />
 
@@ -26,7 +26,7 @@
             v-html="pck.package_overview"
             class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3"
           ></div>
-        </a>
+        </NuxtLink>
 
         <div class="flex justify-between items-center mt-auto pt-2">
           <p class="text-m font-medium text-gray-700 dark:text-gray-400">
@@ -38,7 +38,7 @@
             </span>
           </p>
 
-          <a href="" class="text-sm text-pr hover:underline"> View Package </a>
+          <span  class="text-sm text-pr hover:underline"> View Package </span>
         </div>
       </div>
     </div>

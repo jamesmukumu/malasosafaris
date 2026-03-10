@@ -30,13 +30,7 @@ const form = reactive({
   Nationality: '',
   message: props.message || ''
 })
-function handleMapReady(map) {
-  isLoaded.value = true
-  // Force Mapbox to recalculate size after layout is done
-  nextTick(() => {
-    map.resize()
-  })
-}
+
 const errors = reactive({})
 
 /* -----------------------
@@ -252,32 +246,28 @@ function handleReady() {
 
       </form>
     </div>
-<div class="w-full h-[450px] mt-10 overflow-hidden">
+<!-- <div class="w-full h-[450px] mt-10 overflow-hidden">
 
   
- <!-- In BookingsCard.vue -->
-<div class="w-full h-[450px] mt-10 overflow-hidden">
   <ClientOnly>
     <MapboxMap
       map-id="hotel-map"
       class="w-full h-full"
       :options="{
         style: 'mapbox://styles/mapbox/light-v11',
-        center: [coordinates.longitude, coordinates.latitude],
+        center: [coordinates.latitude, coordinates.longitude],
         zoom: 8
       }"
-      @ready="handleMapReady"   
     >
       <MapboxDefaultMarker
         marker-id="hotel-marker"
-        :lnglat="[coordinates.longitude, coordinates.latitude]" 
+        :lnglat="[coordinates.latitude, coordinates.longitude]"
         :options="{ color: 'red' }"
       />
     </MapboxMap>
   </ClientOnly>
-</div>
-
-</div>
+  
+</div> -->
 
   </div>
 </template>
