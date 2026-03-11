@@ -334,4 +334,15 @@ const mainBlogs = computed(()=>blogs.value.slice(0,2))
 var otherBlogs = computed(()=>blogs.value.slice(2))
 
 let homeImages = imgs.data.value.images ?? [];
+
+
+
+useSeoMeta({
+title:"Top Holidays Deals | Kenya &amp; International Destinations",
+description:"Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
+ogTitle:"Top Holidays Deals | Kenya &amp; International Destinations",
+ogDescription:"Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

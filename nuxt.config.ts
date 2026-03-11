@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   app:{
     
     head:{
+    titleTemplate:"%s | PJ Safaris",
     link:[
          {
           rel: 'stylesheet',
