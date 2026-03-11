@@ -112,7 +112,8 @@ With a team of experienced travel professionals, PJ Safaris offers personalized 
           >
             <img
               alt="maasai-mara"
-              src="/images/home/Coastal-Paradise.jpg"
+              src="/images/home/Lion-maasai-mara (4).jpg"
+             
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="p-4 flex flex-col flex-1">
@@ -130,11 +131,12 @@ With a team of experienced travel professionals, PJ Safaris offers personalized 
           </NuxtLink>
 
           <NuxtLink
+          to="/package/category"
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
               alt="maasai-mara"
-              src="/images/home/Lion-maasai-mara (4).jpg"
+               src="/images/home/Coastal-Paradise.jpg"
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="p-4 flex flex-col flex-1">
