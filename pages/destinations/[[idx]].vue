@@ -151,4 +151,14 @@ function toLink(page) {
   if (page === 1) return '/destinations'
   return `/destinations/${page}`
 }
+
+
+useSeoMeta({
+title:"Discover Africa’s Top Travel Destinations with PJ Safaris",
+description:"Discover the best safari destinations in Kenya and Africa with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
+ogTitle:"Discover Africa’s Top Travel Destinations with PJ Safaris",
+ogDescription:"Discover the best safari destinations in Kenya and Africa with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>
