@@ -42,4 +42,16 @@ let { data, pending, error } = await useFetch("/api/blog", {
 let blog = ref(data.value.blog[0]);
 let relatedBlogs = ref(data.value.related_blogs ?? [])
 
+
+
+let Title = blog.value.blog_title
+let Descp = blog.value.blog_description
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

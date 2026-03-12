@@ -12,7 +12,7 @@
       </h1>
     </div>
 
-    <!-- BLOG LIST -->
+    
     <div class="max-w-[900px] mx-auto px-4 my-8">
       <NuxtLink
         v-for="blog in blogs"
@@ -116,4 +116,17 @@ function toLink(page) {
   if (page === 1) return '/blogs'
   return `/blogs/${page}`
 }
+
+let Title = "PJ Safaris Travel Posts"
+let Descp = 'Get information on Masai mara safaris, wildlife guides, travel planning advice, and the latest updates on the Masai Mara. Read expert blogs to make your safari unforgettable'
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
+
+
 </script>

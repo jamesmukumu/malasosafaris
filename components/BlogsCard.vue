@@ -60,15 +60,15 @@
     </div>
 
     <div class="space-y-4 lg:w-1/3">
-      <NuxtLink
-      :to="`/blog/${other.slug}`"
+      <div
+    
         v-for="other in otherBlogs"
         :key="other.id"
         class="border-l-4 border-pr pl-4 py-2 hover:bg-gray-50 transition"
       >
-        <p class="text-lg font-medium text-gray-800">{{ other.blog_title }}</p>
+        <NuxtLink  :to="`/blog/${other.slug}`" class="text-lg font-medium text-gray-800">{{ other.blog_title }}</NuxtLink>
         <p class="text-sm text-gray-600">Posted:{{ formatter(other.created_at) }} • Admin</p>
-      </NuxtLink>
+      </div>
     </div>
    </div>
   </div>
