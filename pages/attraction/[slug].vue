@@ -80,4 +80,16 @@ query:{slug}
 })
 
 let attraction = ref(data.value)
+
+
+let Title = attraction.value.attraction_name
+let Descp = attraction.value.attraction_overview
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

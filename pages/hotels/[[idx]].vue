@@ -117,7 +117,7 @@ const currentPage = computed({
    Fetch blogs from API based on page
 -------------------------- */
 const { data,pending,error } = await useFetch(() => `/api/hotels?page=${currentPage.value}`)
-console.error(error.value)
+
 /* -------------------------
    Extract reactive data
 -------------------------- */
@@ -146,4 +146,18 @@ function toLink(page) {
   if (page === 1) return '/hotels'
   return `/hotels/${page}`
 }
+
+
+
+
+let Title = "Hotels | Discover  1000+ hotels in Kenya and East Africa. Book your favourite hotels in Masai Mara, Nairobi, Nakuru Mombasa and Nanyuki and get an exclusive experience for your safari in kenya"
+let Descp = "Discover the best safari destinations in Kenya and Afrca with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more."
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

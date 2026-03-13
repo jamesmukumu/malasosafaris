@@ -134,4 +134,17 @@ function toLink(page) {
   if (page === 1) return "/attractions";
   return `/attractions/${page}`;
 }
+
+
+
+let Title = 'Discover Africa’s Top Attractions with PJ Safaris'
+let Descp = 'Experience the breathtaking sights and unforgettable adventures that make Africa extraordinary with PJ Safaris, a leading tours and travel company in Kenya. Discover iconic safari destinations, diverse wildlife, stunning landscapes, and rich cultural experiences across Kenya and East Africa. From thrilling game drives in world-famous national parks to relaxing beach getaways and expertly guided tours, PJ Safaris creates personalized travel experiences for every type of traveler. Our team is dedicated to delivering exceptional service, carefully planned itineraries, and authentic African adventures that showcase the beauty of the continent. Whether you are planning a luxury safari, family holiday, honeymoon, or group adventure, PJ Safaris ensures a seamless and memorable journey from start to finish. Explore Africa the PJ Safaris way and create lasting memories with trusted local experts who understand the true spirit of African travel'
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>
