@@ -80,4 +80,16 @@
 let { data, pending, error } = await useFetch("/api/adventures_category");
 let adventures_categories = ref(data.value.rows ?? []);
 
+
+
+let Title = "Enjoy Thrilling Adventures Across Africa | Mountain Climbing, Amboseli & Diani"
+let Descp = "Choose from our exciting adventrues packages across Kenya and Africa in General, including Mountain Climbing, Snorkelling, and Deep Sea Diving. From luxury lodges to budget-friendly adventures, find the perfect adventure for you."
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

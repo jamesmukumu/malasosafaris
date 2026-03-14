@@ -2,12 +2,18 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxtjs/seo', 'nuxt-easy-lightbox', '@nuxt/icon', 'nuxt-mapbox'],
+  modules: ['@nuxt/ui', '@nuxtjs/seo', 'nuxt-easy-lightbox', '@nuxt/icon', 'nuxt-mapbox', '@nuxtjs/sitemap',"@vercel/analytics"],
     css:['~/assets/css/main.css'],
       mapbox: {
     accessToken: 'pk.eyJ1IjoiamFtZXNtdWt1bXUiLCJhIjoiY21sa2w3ZTF6MDdtdjNjcXdndHVleXdidyJ9.ODqU-5qy3bktsPMUyFV4HQ'
   },
-  
+  sitemap:{
+autoLastmod:true,
+sources:[
+  "/api/sitemaps"
+]
+
+  },
   app:{
     
     head:{

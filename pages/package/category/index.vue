@@ -75,4 +75,15 @@
 let { data, pending, error } = await useFetch("/api/packages_category");
 let package_categories = ref(data.value.rows ?? []);
 
+
+let Title = 'Kenya Safari Packages | Masai Mara, Amboseli & Diani'
+let Descp = 'Choose from our exciting safari packages across Kenya, including Masai Mara, Amboseli, and Lake Naivasha. From luxury lodges to budget-friendly adventures, find the perfect safari for you.'
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

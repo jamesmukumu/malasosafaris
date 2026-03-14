@@ -220,7 +220,7 @@ icon:"si:sun-line"
 }))
 
 const pck = computed(()=> data.value?.rows?.[0] || {})
-console.log(data.value.rows)
+
 const activeTab = ref('overview')
 
 const tabs = [
@@ -250,4 +250,16 @@ exclusion: exclusions[i] || (i === 1 ? 'Nothing not mentioned' : '')
 
 })
 let Pricer = priceFormatter
+
+
+let Title = pck.value.package_title
+let Descp = pck.value.package_overview
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>

@@ -222,4 +222,16 @@ exclusion: exclusions[i] || (i === 1 ? 'Nothing not mentioned' : '')
 
 })
 
+
+
+let Title = adventure.value?.name
+let Descp = adventure.value?.adventure_overview
+useSeoMeta({
+title:Title,
+description:Descp,
+ogTitle:Title,
+ogDescription:Descp,
+ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+
+})
 </script>
