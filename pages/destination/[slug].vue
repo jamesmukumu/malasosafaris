@@ -39,7 +39,10 @@
             </UCarousel>
           </div>
         </div>
-
+   <div
+          class="prose flex flex-col gap-2"
+          v-html="destination.destination_overview"
+        />
         <div
           class="prose flex flex-col gap-2"
           v-html="destination.destination_description"

@@ -4,7 +4,8 @@
       <h1 class="text-3xl font-bold text-center mb-8">See Hotels</h1>
 
       <div class="flex flex-col w-full">
-        <div
+        <NuxtLink
+        :to="`/hotel/${hotel.slug}`"
           v-for="hotel in hotels"
           :key="hotel.id"
           class="flex flex-col w-full cursor-pointer mt-2 rounded-lg bg-white shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden"
@@ -22,14 +23,14 @@
               {{ hotel.hotel_name }}
             </h2>
 
-            <a
-              target="_blank"
+            <span
+              
               class="inline-flex items-center justify-center px-6 py-3 text-white font-semibold rounded-md bg-pr shadow-sm transition hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
             >
               See Hotel
-            </a>
+            </span>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </section>
   </div>

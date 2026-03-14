@@ -16,7 +16,7 @@ LEFT JOIN LATERAL (
         WHERE hotels.destination_id = d.id
           AND hotels.published = true
         ORDER BY hotels.created_at ASC
-        LIMIT 5
+        LIMIT 3
     ) hotel_data
 ) h ON true
 
