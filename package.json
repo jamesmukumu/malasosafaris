@@ -16,6 +16,7 @@
     "@nuxtjs/sitemap": "^7.6.0",
     "@primeuix/themes": "^2.0.3",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "cloudinary": "^2.9.0",
     "nuxt": "^4.3.1",
     "nuxt-easy-lightbox": "^1.1.0",
