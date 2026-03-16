@@ -25,9 +25,12 @@
               type="text"
               class="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
               placeholder="Email Address"
+              v-model="email"
             />
 
             <button
+            
+            @click="SaveEmail"
               class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80"
             >
               Subscribe
@@ -44,72 +47,72 @@
         <div>
           <h1 class="font-semibold text-xl text-white">Destinations</h1>
           <div class="flex flex-col items-start mt-5 space-y-2">
-            <a
-              href="/destination/Tsavo-West"
+            <NuxtLink
+            to="/destination/Tsavo-West"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Tsavo West
-            </a>
-            <a
-              href="/destination/Lake-Naivasha"
+            </NuxtLink>
+            <NuxtLink
+              to="/destination/Lake-Naivasha"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Naivasha
-            </a>
-            <a
-              href="/destination/Maasai-Mara"
+            </NuxtLink>
+            <NuxtLink
+              to="/destination/Maasai-Mara"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Maasai Mara
-            </a>
-            <a
-              href="/destination/Amboseli"
+            </NuxtLink>
+            <NuxtLink
+              to="/destination/Amboseli"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Amboseli
-            </a>
+            </NuxtLink>
 
-            <a
-              href="/destination/Samburu"
+            <NuxtLink
+              to="/destination/Samburu"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Samburu
-            </a>
+            </NuxtLink>
           </div>
         </div>
 
         <div>
           <p class="font-semibold text-xl text-white">Quick Links</p>
           <div class="flex flex-col items-start mt-5 space-y-2">
-            <a
-              target="_blank"
-              href="/package/category/Maasai-Mara-Packages"
+            <NuxtLink
+            
+              to="/package/category/Maasai-Mara-Packages"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Kenya Safari Packages
-            </a>
-            <a
-              target="_blank"
-              href="/package/category/Maasai-Mara-Packages"
+            </NuxtLink>
+            <NuxtLink
+             
+              to="/package/category/Maasai-Mara-Packages"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Maasai Mara Packages
-            </a>
+            </NuxtLink>
 
-            <a
-              target="_blank"
-              href="/package/category"
+            <NuxtLink
+              
+              to="/package/category"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Amboseli National Park Packages
-            </a>
-            <a
-              target="_blank"
-              href="/attractions"
+            </NuxtLink>
+            <NuxtLink
+              
+              to="/attractions"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Attractions
-            </a>
+            </NuxtLink>
             <NuxtLink
               
               to="/blogs"
@@ -123,28 +126,22 @@
         <div>
           <h1 class="text-xl font-semibold text-white">Get to know us</h1>
           <div class="flex flex-col items-start mt-5 space-y-2">
-            <a
-              target="_blank"
-              href="/about/us"
+            <NuxtLink
+              
+              to="/aboutus"
               class="transition-colors text-white duration-300 hover:underline"
             >
               About us
-            </a>
-            <a
-              target="_blank"
-              href="/contact"
+            </NuxtLink>
+            <NuxtLink
+            
+              to="/contact"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Contact us
-            </a>
+            </NuxtLink>
 
-            <a
-              target="_blank"
-              href=""
-              class="transition-colors text-white duration-300 hover:underline"
-            >
-              Careers
-            </a>
+         
           </div>
         </div>
 
@@ -203,4 +200,41 @@
 
 <script setup>
 let yr = new Date().getFullYear();
+let email = ref("")
+let toast = useToast()
+async function SaveEmail(){
+
+if(email.value == "" || !email.value){
+
+toast.add({
+title:"Email Address must be given",
+description:"Please Provide a valid email address",
+color:"error"
+
+})
+return
+}
+try{
+let resp = await $fetch("/api/newsletter",{
+body:{
+"email":email.value
+},
+method:"POST"
+})
+toast.add({
+  title:"Success",
+description:"Added to newsletters successfully",
+
+})
+}catch(err){
+toast.add({
+  title:"Error",
+description:"Something Went Wrong",
+color:"error"
+
+})
+
+}
+
+}
 </script>
