@@ -117,6 +117,14 @@ v-html="pck?.special_notes"
 
 
 
+
+<!-- bookings -->
+ <div v-if="activeTab == 'book'">
+<section>
+<BookingForm :message="`Hello PJ Safaris i would wish to join ${pck.package_title}`"/>
+</section>
+
+ </div>
 <!-- PLAN -->
 <div v-if="activeTab === 'plan'">
 <UAccordion :items="plan_items"  type="multiple"  :ui="{

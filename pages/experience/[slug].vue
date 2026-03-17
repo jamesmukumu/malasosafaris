@@ -115,6 +115,13 @@ v-html="adventure?.special_notes"
 
 </div>
 
+<!--Book  -->
+
+<section v-if="activeTab == 'book'">
+<BookingForm :message="`Hello PJ Safari's, i would wish to join ${adventure?.name}`"/>
+
+</section>
+
 
 
 <!-- PLAN -->
