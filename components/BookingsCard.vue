@@ -59,29 +59,31 @@ async function handleSubmit() {
   save.value = true
 
   const payload = {
-    FirstName: form.firstName,
-    LastName: form.lastName,
-    Email: form.email,
-    Phonenumber: form.phone,
+    firstName: form.firstName,
+    lastName: form.lastName,
+    email: form.email,
+    phone: form.phone,
     Nationality: form.Nationality,
-    Message: form.message
+    message: form.message
   }
-
+let toast = useToast()
   try {
-    const { error } = await useFetch('/api/enquiry', {
+    const resp = await useFetch('/api/enquiry', {
       method: 'POST',
       body: payload
     })
 
-    if (!error.value) {
-      alert('Enquiry Added Successfully')
-      Object.keys(form).forEach(key => form[key] = '')
-    } else {
-      alert('Something went wrong')
-    }
+toast.add({
+title:"Enquriy Added",
+description:"Enquiry Received Successfully"
+})
   } catch (err) {
     console.error(err)
-    alert('Something went wrong')
+    toast.add({
+title:"Failed",
+description:"Something Went Wrong",
+color:"error"
+})
   }
 
   save.value = false
@@ -223,6 +225,7 @@ function handleReady() {
         <!-- MESSAGE -->
         <div>
           <textarea
+          disabled
             v-model="form.message"
             rows="4"
             placeholder="Your Message"
@@ -246,28 +249,27 @@ function handleReady() {
 
       </form>
     </div>
-<!-- <div class="w-full h-[450px] mt-10 overflow-hidden">
-
-  
-  <ClientOnly>
-    <MapboxMap
-      map-id="hotel-map"
-      class="w-full h-full"
-      :options="{
-        style: 'mapbox://styles/mapbox/light-v11',
-        center: [coordinates.latitude, coordinates.longitude],
-        zoom: 8
-      }"
+  <div style="height:100vh; width:100vw">
+    <LMap
+      ref="map"
+      :zoom="8"
+      :center="[coordinates.longitude,coordinates.latitude]"
+      :use-global-leaflet="false"
     >
-      <MapboxDefaultMarker
-        marker-id="hotel-marker"
-        :lnglat="[coordinates.latitude, coordinates.longitude]"
-        :options="{ color: 'red' }"
+      <LTileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+        layer-type="base"
+        name="OpenStreetMap"
       />
-    </MapboxMap>
-  </ClientOnly>
-  
-</div> -->
+
+        <LCircle
+    :lat-lng="[coordinates.longitude,coordinates.latitude]"
+    :radius="4500"
+    :color="'red'"
+  />
+    </LMap>
+  </div>
 
   </div>
 </template>
