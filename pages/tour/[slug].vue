@@ -199,7 +199,7 @@ class="w-full h-full object-cover"
 
 </section>
 
-<div>
+<div class="m-2">
 <PckCard :packages="pck.related_packages" :title="`More Of ${pck.package_category.package_category_name}`"/>
 </div>
 
