@@ -37,20 +37,21 @@
       <nav class="hidden lg:flex items-center gap-12 text-base font-medium">
         <NuxtLink to="/" class="hover:text-[#bf4226]">Home</NuxtLink>
         <NuxtLink to="/destinations" class="hover:text-[#bf4226]">Destinations</NuxtLink>
-        <NuxtLink to="/adventure/category" class="hover:text-[#bf4226]">Adventures</NuxtLink>
         <NuxtLink to="/package/category" class="hover:text-[#bf4226]">Safaris</NuxtLink>
         <NuxtLink to="/hotels" class="hover:text-[#bf4226]">Hotels</NuxtLink>
-        <a href="/about/us" class="hover:text-[#bf4226]">About Us</a>
-          <a
-                    href="/contact"
+        <NuxtLink to="/adventure/category" class="hover:text-[#bf4226]">Adventures</NuxtLink>
+
+        <NuxtLink to="/about/us" class="hover:text-[#bf4226]">About Us</NuxtLink>
+          <NuxtLink
+                    to="/contact"
                     class="px-6 py-2 rounded bg-[#bf4226] hover:bg-[#a8361f] transition text-sm font-semibold text-white"
                   >
                     Contact Us
-                  </a>
+                  </NuxtLink>
       </nav>
 
       <!-- Hamburger -->
-      <button @click="toggleMenu" class="lg:hidden text-3xl">
+      <button @click="toggleMenu" class="lg:hidden text-2xl">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
@@ -85,6 +86,12 @@
        <li><NuxtLink to="/adventure/category" >Adventures</NuxtLink></li>
        <li><NuxtLink to="/attractions" >Attractions</NuxtLink></li>
         <li><NuxtLink to="/blogs"  >Blogs</NuxtLink></li>
+                 <NuxtLink
+                    to="/contact"
+                    class="px-6 py-2 rounded bg-[#bf4226] hover:bg-[#a8361f] transition text-sm font-semibold text-white"
+                  >
+                    Contact Us
+                  </NuxtLink>
     </ul>
   </aside>
 </template>
