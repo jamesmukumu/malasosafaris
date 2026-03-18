@@ -42,16 +42,16 @@
         class="container mx-auto px-6 flex flex-col md:flex-row items-center"
       >
         <div class="md:w-1/2 md:pr-12">
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
+          <h1 class="text-3xl  md:text-4xl font-bold text-gray-800 leading-snug">
             PJ Safaris
           </h1>
           <p class="mt-4 text-lg text-gray-600">
        PJ Safaris is a leading tours and travel company in Kenya, specializing in unforgettable safari experiences across the country’s most iconic destinations. From the world-famous Maasai Mara to Amboseli, Tsavo, and Kenya’s stunning coastal regions, we create expertly planned tours that showcase the beauty of Africa’s wildlife, landscapes, and culture.
 
-With a team of experienced travel professionals, PJ Safaris offers personalized itineraries, reliable service, and seamless travel planning for individuals, families, and groups. Whether you're looking for a luxury safari, a wildlife adventure, or a relaxing holiday, PJ Safaris is committed to delivering authentic Kenyan safari experiences and memories that last a lifetime.
+
           </p>
           <NuxtLink
-            to="/"
+            to="/contact"
             type="button"
             class="inline-block mt-6 px-6 py-3 bg-pr hover:bg-pr text-white font-semibold rounded-lg shadow transition"
           >
