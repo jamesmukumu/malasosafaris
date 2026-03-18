@@ -1,9 +1,10 @@
 import {v2 as cloudinary} from "cloudinary"
 export default defineEventHandler(async(event)=>{
+let config = useRuntimeConfig()
 cloudinary.config({
-  cloud_name: 'dasrniwpk',
-  api_key: '127522832224378',
-  api_secret: '60rb1fOK-JsS_On5ae8iSybJx6A'
+  cloud_name: config.cld.name,
+  api_key: config.cld.api_key,
+  api_secret: config.cld.api_secret
 })
 try{
 let results = await cloudinary.api.resources({

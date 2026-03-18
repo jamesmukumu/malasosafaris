@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
    
     var {rows} = await pool.query("SELECT * FROM blogs WHERE published = true ORDER BY created_at DESC  LIMIT 6")
-    let {rows:packages} = await pool.query("SELECT * FROM packages WHERE published = true ORDER BY created_at DESC LIMIT 6")
+    let {rows:packages} = await pool.query("SELECT * FROM packages WHERE published = true ORDER BY created_at DESC LIMIT 9")
     // console.log("SERVER RESPONSE:", response)
 
     return {

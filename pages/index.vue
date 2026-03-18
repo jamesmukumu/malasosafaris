@@ -20,7 +20,7 @@
       >
         <div class="relative w-full">
           <!-- Image -->
-          <img :src="item.url" alt="pj-safaris" class="w-full h-[500px] object-cover" />
+          <img :src="item.secure_url" alt="pj-safaris" class="w-full h-[500px] object-cover" />
 
           <!-- Centered Button -->
           <div class="absolute inset-0 flex items-center justify-center">

@@ -61,8 +61,9 @@
         <!-- CHECKIN + CHECKOUT -->
         <div class="flex flex-col md:flex-row gap-4">
           <div class="w-full">
-            <label class="block text-xs mb-1 text-gray-600">Check In</label>
+            <label for="check-in" class="block text-xs mb-1 text-gray-600">Check In</label>
             <input
+            id="check-in"
               v-model="form.checkIn"
               type="date"
               :min="today"
@@ -71,8 +72,9 @@
           </div>
 
           <div class="w-full">
-            <label class="block text-xs mb-1 text-gray-600">Check Out</label>
+            <label for="check-out" class="block text-xs mb-1 text-gray-600">Check Out</label>
             <input
+            id="check-out"
               v-model="form.checkOut"
               type="date"
               :min="today"
@@ -100,7 +102,11 @@
 
         <!-- NATIONALITY -->
         <div>
+                    <label for="nationality" class="block text-sm font-medium text-gray-700 mb-1">
+    Citizenship
+  </label>
           <select
+          id="nationality"
             v-model="form.Nationality"
             class="w-full border rounded-md px-3 py-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
           >

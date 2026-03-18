@@ -46,6 +46,11 @@ sources:[
       user: process.env.DB_USER,
       password:process.env.DB_PASS,
       database: process.env.DB_DATABASE
+    },
+    cld:{
+    name:process.env.CLOUDINARY_CLOUD_NAME,
+    api_key:process.env.CLOUDINARY_API_KEY,
+    api_secret:process.env.CLOUDINARY_API_SECRET
     }
   }
 })
