@@ -170,7 +170,7 @@ function handleReady() {
           <div class="w-full">
             <label for="check-in" class="block text-xs mb-1 text-gray-600">Check In</label>
             <input
-            name="check-in"
+        id="check-in"
               v-model="form.checkIn"
               type="date"
               :min="today"
@@ -183,7 +183,7 @@ function handleReady() {
             <input
               v-model="form.checkOut"
               type="date"
-              name="check-out"
+              id="check-out"
               :min="today"
               class="w-full border rounded-md px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
             />
@@ -213,7 +213,7 @@ function handleReady() {
     Citizenship
   </label>
           <select
-          name="nationality"
+          id="nationality"
             v-model="form.Nationality"
             class="w-full border rounded-md px-3 py-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
           >
