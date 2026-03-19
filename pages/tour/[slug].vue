@@ -1,273 +1,207 @@
 <template>
-<div class="bg-white overflow-x-hidden">
+  <div class="bg-white overflow-x-hidden">
 
-<Header />
+    <Header />
 
-<!-- HERO -->
-<div
-class="flex justify-center items-center h-[65vh] md:min-h-screen w-full bg-cover bg-center"
-:style="{ backgroundImage: `url(${pck?.package_photo})` }"
->
+    <!-- HERO -->
+    <div
+      class="flex justify-center items-center h-[65vh] md:min-h-screen w-full bg-cover bg-center"
+      :style="{ backgroundImage: `url(${pck?.package_photo})` }"
+    >
+      <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
+        {{ pck?.package_title }}
+        (
+        {{ pck?.package_charge_currency }}
+        <span class="font-bold">
+          {{ Pricer(pck?.package_charge) }}
+        </span>
+        )
+      </h1>
+    </div>
 
-<h1 class="text-white text-3xl md:text-4xl font-bold text-center">
-{{ pck?.package_title }}
-(
-{{ pck?.package_charge_currency }}
-<span class="font-bold">
-{{Pricer( pck?.package_charge )}}
-</span>
-)
-</h1>
+    <section class="max-w-7xl mx-auto px-6 mt-12">
 
-</div>
+      <h2 class="text-4xl md:text-5xl text-center font-light text-gray-900 mb-10">
+        {{ pck?.package_title }}
+      </h2>
 
+      <!-- TAB BUTTONS -->
+      <div class="flex justify-center gap-4 mb-10 flex-wrap">
+        <UButton
+          v-for="tab in tabs"
+          :key="tab.value"
+          class="cursor-pointer"
+          @click="activeTab = tab.value"
+          :variant="activeTab === tab.value ? 'solid' : 'outline'"
+        >
+          {{ tab.label }}
+        </UButton>
+      </div>
 
-<section class="max-w-7xl mx-auto px-6 mt-12">
+      <!-- OVERVIEW -->
+      <div v-if="activeTab === 'overview'">
+        <div
+          class="text-lg text-gray-700 leading-relaxed"
+          v-html="pck?.package_overview"
+        />
 
-<h2 class="text-4xl md:text-5xl text-center font-light text-gray-900 mb-10">
-{{ pck?.package_title }}
-</h2>
+        <UCard class="mt-10">
+          <h3 class="text-2xl font-bold text-center text-pr mb-6">
+            Inclusions & Exclusions
+          </h3>
 
+          <div class="overflow-x-auto">
+            <table class="min-w-full table-auto border-collapse">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="p-3 border text-left text-teal-800 font-semibold">
+                    Price Includes
+                  </th>
+                  <th class="p-3 border text-left text-red-800 font-semibold">
+                    Price Excludes
+                  </th>
+                </tr>
+              </thead>
 
-<!-- TAB BUTTONS -->
-<div class="flex justify-center gap-4 mb-10 flex-wrap">
+              <tbody>
+                <tr v-for="(row, index) in inclusionsRows" :key="index">
+                  <td class="p-3 border">{{ row.inclusion }}</td>
+                  <td class="p-3 border">{{ row.exclusion }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </UCard>
 
-<UButton
-class="cursor-pointer"
-v-for="tab in tabs"
-:key="tab.value"
-@click="activeTab = tab.value"
-:variant="activeTab === tab.value ? 'solid' : 'outline'"
->
-{{ tab.label }}
-</UButton>
+        <h3 class="text-2xl font-bold mt-10">Special Notes</h3>
 
-</div>
+        <div
+          class="mt-4 text-lg text-gray-700 leading-relaxed"
+          v-html="pck?.special_notes"
+        />
+      </div>
 
+      <!-- PLAN -->
+      <div v-if="activeTab === 'plan'">
+        <UAccordion
+          v-model="openItems"
+          :items="plan_items"
+          type="multiple"
+          :ui="{ label: 'text-xl md:text-2xl font-semibold' }"
+        >
+          <template #body="{ item }">
+            <div
+              class="text-lg text-gray-700 leading-relaxed"
+              v-html="item?.overview"
+            />
+          </template>
+        </UAccordion>
+      </div>
 
-<!-- TAB CONTENT -->
+      <!-- PHOTOS -->
+      <div v-if="activeTab === 'photos'">
+        <UCarousel
+          v-if="pck?.package_photos?.length"
+          v-slot="{ item }"
+          loop
+          arrows
+          :autoplay="{ delay: 2000 }"
+          wheel-gestures
+          :items="pck.package_photos"
+          :ui="{
+            item: 'basis-full sm:basis-1/2 lg:basis-1/3 p-2',
+            prev: 'sm:start-4',
+            next: 'sm:end-4'
+          }"
+        >
+          <div class="aspect-square overflow-hidden rounded-xl">
+            <img
+              :src="item"
+              class="w-full h-full object-cover"
+              :alt="pck.package_slug"
+            />
+          </div>
+        </UCarousel>
+      </div>
 
-<!-- OVERVIEW -->
-<div v-if="activeTab === 'overview'">
+      <!-- BOOK -->
+      <div v-if="activeTab === 'book'">
+        <BookingForm :message="`Hello PJ Safaris i would wish to join ${pck.package_title}`"/>
+      </div>
 
-<div
-class="text-lg text-gray-700 leading-relaxed"
-v-html="pck?.package_overview"
-/>
+    </section>
 
-<UCard class="mt-10">
+    <div class="m-2">
+      <PckCard
+        :packages="pck.related_packages"
+        :title="`More Of ${pck.package_category.package_category_name}`"
+      />
+    </div>
 
-<h3 class="text-2xl font-bold text-center text-pr mb-6">
-Inclusions & Exclusions
-</h3>
-
-<div class="overflow-x-auto">
-
-<table class="min-w-full table-auto border-collapse">
-
-<thead>
-<tr class="bg-gray-100">
-
-<th class="text-left text-teal-800 font-semibold p-3 border">
-Price Includes
-</th>
-
-<th class="text-left text-red-800 font-semibold p-3 border">
-Price Excludes
-</th>
-
-</tr>
-</thead>
-
-<tbody>
-
-<tr
-v-for="(row,index) in inclusionsRows"
-:key="index"
->
-
-<td class="p-3 border">
-{{ row.inclusion }}
-</td>
-
-<td class="p-3 border">
-{{ row.exclusion }}
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</UCard>
-
-<h3 class="text-2xl font-bold mt-10">
-Special Notes
-</h3>
-
-<div
-class="mt-4 text-lg text-gray-700 leading-relaxed"
-v-html="pck?.special_notes"
-/>
-
-</div>
-
-
-
-
-<!-- bookings -->
- <div v-if="activeTab == 'book'">
-<section>
-<BookingForm :message="`Hello PJ Safaris i would wish to join ${pck.package_title}`"/>
-</section>
-
- </div>
-<!-- PLAN -->
-<div v-if="activeTab === 'plan'">
-<UAccordion :items="plan_items"  type="multiple"  :ui="{
-      label: 'text-xl md:text-2xl font-semibold'
-    }">
-<template #body="{item}">
-<div>
-
-<div
-class="text-lg text-gray-700 leading-relaxed"
-v-html="item?.overview"
-/>
-
-
-
-
-</div>
-
+    <Footer />
+  </div>
 </template>
-
-
-</UAccordion>
-
-
-</div>
-
-
-
-<!-- PHOTOS -->
-<div v-if="activeTab === 'photos'">
-
-<UCarousel
-v-if="pck?.package_photos?.length"
-v-slot="{ item }"
-loop
-arrows
-:autoplay="{ delay: 2000 }"
-wheel-gestures
-:items="pck.package_photos"
-:ui="{
-item: 'basis-full sm:basis-1/2 lg:basis-1/3 p-2',
-prev: 'sm:start-4',
-next: 'sm:end-4'
-}"
->
-
-<div class="aspect-square overflow-hidden rounded-xl">
-
-<img
-:src="item"
-class="w-full h-full object-cover"
-:alt="pck.package_slug"
-/>
-
-</div>
- 
-</UCarousel>
-
-</div>
-
-
-
-<!-- BOOK -->
-<div v-if="activeTab === 'book'">
-
-<div>
-<!-- <BookingsCard/> -->
-</div>
-
-</div>
-
-
-</section>
-
-<div class="m-2">
-<PckCard :packages="pck.related_packages" :title="`More Of ${pck.package_category.package_category_name}`"/>
-</div>
-
-<Footer />
-
-</div>
-</template>
-
-
 
 <script setup>
-
 const route = useRoute()
 const slug = route.params.slug
 
-const { data } = await useFetch('/api/tour',{
-query:{ slug }
+const { data } = await useFetch('/api/tour', {
+  query: { slug }
 })
+
+/* BUILD ITEMS WITH VALUE (CRITICAL FIX) */
 let itenerary = JSON.parse(data.value.rows[0].package_itenerary)
-let plan_items = itenerary.map((item,idx)=>({
-label: `Day ${idx+1} ${item.title}`,
-overview:item.overview,
-accomodation:item.Accomodation ?? '',
-mealPlan:item.mealPlan,
-icon:"si:sun-line"
+
+let plan_items = itenerary.map((item, idx) => ({
+  label: `Day ${idx + 1} ${item.title}`,
+  value: `day-${idx}`, 
+  overview: item.overview,
+  accomodation: item.Accomodation ?? '',
+  mealPlan: item.mealPlan,
+  icon: "si:sun-line"
 }))
 
-const pck = computed(()=> data.value?.rows?.[0] || {})
+
+const openItems = computed(() =>
+  plan_items.map(item => item.value)
+)
+
+const pck = computed(() => data.value?.rows?.[0] || {})
 
 const activeTab = ref('overview')
 
 const tabs = [
-{ label:'Tour', value:'overview' },
-{ label:'Plan', value:'plan' },
-{ label:'Photos', value:'photos' },
-{ label:'Book', value:'book' }
+  { label: 'Tour', value: 'overview' },
+  { label: 'Plan', value: 'plan' },
+  { label: 'Photos', value: 'photos' },
+  { label: 'Book', value: 'book' }
 ]
 
+const inclusionsRows = computed(() => {
+  const inclusions = pck.value?.inclusions
+    ? pck.value.inclusions.split(',')
+    : []
 
-const inclusionsRows = computed(()=>{
+  const exclusions = pck.value?.exclusions
+    ? pck.value.exclusions.split(',')
+    : []
 
-const inclusions = pck.value?.inclusions
-? pck.value.inclusions.split(',')
-: []
+  const max = Math.max(inclusions.length, exclusions.length)
 
-const exclusions = pck.value?.exclusions
-? pck.value.exclusions.split(',')
-: []
-
-const max = Math.max(inclusions.length, exclusions.length)
-
-return Array.from({length:max}).map((_,i)=>({
-inclusion: inclusions[i] || '',
-exclusion: exclusions[i] || (i === 1 ? 'Nothing not mentioned' : '')
-}))
-
+  return Array.from({ length: max }).map((_, i) => ({
+    inclusion: inclusions[i] || '',
+    exclusion: exclusions[i] || (i === 1 ? 'Nothing not mentioned' : '')
+  }))
 })
+
 let Pricer = priceFormatter
 
-
-let Title = pck.value.package_title
-let Descp = pck.value.package_overview
 useSeoMeta({
-title:Title,
-description:Descp,
-ogTitle:Title,
-ogDescription:Descp,
-ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
-
+  title: pck.value.package_title,
+  description: pck.value.package_overview,
+  ogTitle: pck.value.package_title,
+  ogDescription: pck.value.package_overview,
+  ogImage: "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
 })
 </script>
