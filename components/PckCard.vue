@@ -1,30 +1,34 @@
 <template>
-  <div class="w-full grid place-content-center">
+  <div class="w-full grid place-content-center p-4">
     <h2
       class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
     >
       {{ title }}
     </h2>
     <div class="w-24 h-1 bg-[#bf4226] mx-auto"></div>
-    <div class="mt-4 flex flex-wrap justify-center gap-4">
+    <div class="mt-4 w-full   grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div
         v-for="pck in packages"
         :key="pck.id"
-        class="grow-0 shrink-0 basis-full sm:basis-[48%] md:basis-[31%] bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-3 cursor-pointer flex flex-col"
+        class=" flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden
+                         hover:shadow-xl transition
+                         grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]"
       >
         <NuxtLink :to="`/tour/${pck.package_slug}`">
-          <img
+      <div class="aspect-[4/3] overflow-hidden">
+            <img
             :src="pck.package_photo"
             :alt="pck.package_slug"
-            class="w-full h-52 object-cover rounded mb-4"
+            class="w-full h-full object-cover hover:scale-105 transition duration-700"
           />
+      </div>
 
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white m-3">
             {{ pck.package_title }}
           </h3>
           <div
             v-html="pck.package_overview"
-            class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3"
+            class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 m-3"
           ></div>
         </NuxtLink>
 
@@ -38,7 +42,7 @@
             </span>
           </p>
 
-          <span  class="text-sm text-pr hover:underline"> View Package </span>
+          <a  :href="`/tour/${pck.package_slug}`" class="text-sm text-pr hover:underline"> View Package </a>
         </div>
       </div>
     </div>

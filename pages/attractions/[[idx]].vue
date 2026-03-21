@@ -9,7 +9,7 @@
       "
     >
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
-        Attraction For the Eye around Africa
+        Attractions For The Eye Around Africa
       </h1>
     </div>
     <section class="py-4 bg-white">
@@ -18,7 +18,7 @@
           <h2
             class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide"
           >
-            Discover Africa’s Top Attractions with PJ Safaris
+            Discover Africa’s Top Attractions with PJ Safari's
           </h2>
 
           <p class="mt-6 text-lg leading-relaxed text-gray-600">
@@ -29,12 +29,14 @@
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
         </div>
 
-        <div class="flex flex-wrap gap-6 justify-center items-stretch">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <NuxtLink
           :to="`/attraction/${attraction.attraction_slug}`"
             :key="attraction.id"
             v-for="attraction in attractions"
-            class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]"
+            class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden
+                         hover:shadow-xl transition
+                         grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px] "
           >
             <div class="aspect-[4/3] overflow-hidden">
               <img

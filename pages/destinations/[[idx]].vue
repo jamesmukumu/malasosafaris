@@ -33,7 +33,7 @@
                    
                          <NuxtLink :to="`/destination/${destination.destination_slug}`" v-for="destination in destinations" :key="destination.id" class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden
                          hover:shadow-xl transition
-                         grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]">
+                         grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px] ">
                          <div class="aspect-[4/3] overflow-hidden">
                              <img
                                 :src="destination.destination_photo"

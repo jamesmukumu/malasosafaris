@@ -63,7 +63,7 @@
                
                 className="text-sm font-semibold text-pr hover:underline"
               >
-                View Adventure
+                View Package
               </span>
             </div>
           </NuxtLink>
