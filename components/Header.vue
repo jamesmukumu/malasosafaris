@@ -29,7 +29,7 @@
         <img
           src="https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png"
           alt="Logo"
-          class="h-17 w-auto object-contain"
+          class="h-18 w-auto object-contain"
         />
       </NuxtLink>
 

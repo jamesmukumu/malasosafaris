@@ -34,13 +34,16 @@
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 items-stretch">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <NuxtLink
           :to="`/hotel/${hotel.slug}`"
             v-for="hotel in hotels"
             :key="hotel.id"
-            class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]"
-          >
+            class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden
+                         hover:shadow-xl transition
+                         grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px] ">
+                        
+          
             <div class="aspect-[4/3] overflow-hidden">
               <img
                 :src=hotel.hotel_thumbnail
