@@ -194,6 +194,14 @@
           All Rights Reserved.
         </p>
       </div>
+
+          <p class="mt-4 text-sm sm:mt-0 text-white">
+          A craft of
+          <a class="underline text-white font-black" href="https://www.jamesmukumu.co.ke" target="blank">
+            JamesMukumu
+          </a>
+          
+        </p>
     </div>
   </footer>
 </template>
