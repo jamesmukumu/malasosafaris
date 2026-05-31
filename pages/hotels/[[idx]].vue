@@ -4,7 +4,7 @@
     <div
       class="safaris flex justify-center items-center min-h-screen w-full bg-cover bg-center"
       style="
-        background-image: url(https://res.cloudinary.com/dasrniwpk/image/upload/v1760433626/Sarova-Mara-Game-Camp-Swimming-Pool_u8jax4.jpg);
+        background-image: url('/images/angama.jpeg');
       "
     >
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
@@ -20,11 +20,11 @@
           <h2
             class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide"
           >
-            Top Accommodations with PJ Safaris
+            Top Accommodations with Malaso Safaris
           </h2>
 
           <p class="mt-6 text-lg leading-relaxed text-gray-600">
-            At PJ Safaris, we understand that the right accommodation transforms
+            At Malaso Safaris, we understand that the right accommodation transforms
             a safari or corporate journey into an unforgettable experience.
             That’s why we partner with top-rated hotels, luxury lodges, boutique
             camps, and business-friendly resorts across Kenya and Africa to
