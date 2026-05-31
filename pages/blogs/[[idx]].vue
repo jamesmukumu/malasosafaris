@@ -5,7 +5,7 @@
     <!-- HERO -->
     <div
       class="flex justify-center items-center min-h-screen w-full bg-cover bg-center"
-      style="background-image: url('/images/home/hot-air-balloon-masai-mara_1_j14f8t.jpg');"
+      style="background-image: url('/images/sopa-lodge.jpeg');"
     >
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
         Explore the Latest Travel Updates

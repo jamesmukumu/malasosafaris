@@ -29,7 +29,7 @@
 
           <ul class="space-y-4 text-gray-700 text-lg">
             <li>
-              <strong>Tel No:</strong> +254 06 526681
+              <strong>Tel No:</strong> +254 717 054283
             </li>
             <li>
               <strong>Mobile:</strong> +254 759 857 032
@@ -47,8 +47,8 @@
           <ul class="space-y-4 text-gray-700 text-lg">
             <li>
               <strong>Email:</strong>
-              <a href="mailto:info@pjsafaris.site" class="text-blue-600 hover:underline ml-2">
-                info@pjsafaris.site
+              <a href="mailto:info@malasosafaris..com" class="text-blue-600 hover:underline ml-2">
+                info@malasosafaris.com
               </a>
             </li>
           </ul>

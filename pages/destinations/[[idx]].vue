@@ -5,7 +5,7 @@
             
             <div
                 class="safaris flex justify-center items-center min-h-screen w-full bg-cover bg-center"
-              style="background-image: url(https://res.cloudinary.com/dasrniwpk/image/upload/v1766940616/best-african-elephant-photo-masai-mara_2_oej1ys.jpg);"
+:style="{backgroundImage: 'url(/images/fold2/maasai-dest.jpeg)'}"
             >
                 <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
                     Explore top safari destinations in Kenya
@@ -15,11 +15,11 @@
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-20">
                         <h2 class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide">
-                        Discover Africa’s Top Travel Destinations with PJ Safaris
+                        Discover Africa’s Top Travel Destinations with Malaso Safaris
                         </h2>
 
                         <p class="mt-6 text-lg leading-relaxed text-gray-600">
-                        Discover the best safari destinations in Kenya and Africa with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.
+                        Discover the best safari destinations in Kenya and Africa with Malaso Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.
                         </p>
 
                         <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>

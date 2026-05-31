@@ -11,8 +11,12 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     "@vercel/analytics",
     "@vercel/speed-insights",
-    '@nuxtjs/leaflet'
+    '@nuxtjs/leaflet',
+    `@twicpics/components/nuxt3`
   ],
+  twicpics:{
+  domain:"https://pjsafaris.twic.pics"
+  },
     css:['~/assets/css/main.css'],
       mapbox: {
     accessToken: 'pk.eyJ1IjoiamFtZXNtdWt1bXUiLCJhIjoiY21sa2w3ZTF6MDdtdjNjcXdndHVleXdidyJ9.ODqU-5qy3bktsPMUyFV4HQ'

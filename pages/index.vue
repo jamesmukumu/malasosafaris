@@ -2,7 +2,25 @@
   <div>
     <Header />
 
-    <section>
+
+    <!-- video section -->
+    <section class="w-full overflow-hidden">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="w-full h-[70vh] lg:h-[85vh] object-cover"
+  >
+    <source
+      src="/images/home/video/home-video.mp4"
+      type="video/mp4"
+    />
+  </video>
+</section>
+
+    <!-- <section>
       <UCarousel
         v-slot="{ item }"
         loop
@@ -19,10 +37,10 @@
         }"
       >
         <div class="relative w-full">
-          <!-- Image -->
+          
           <img :src="item.secure_url" alt="pj-safaris" class="w-full h-[500px] object-cover" />
 
-          <!-- Centered Button -->
+        
           <div class="absolute inset-0 flex items-center justify-center">
             <NuxtLink
               to="/"
@@ -33,7 +51,8 @@
           </div>
         </div>
       </UCarousel>
-    </section>
+    </section> -->
+
 
 
 
@@ -43,10 +62,10 @@
       >
         <div class="md:w-1/2 md:pr-12">
           <h1 class="text-3xl  md:text-4xl font-bold text-gray-800 leading-snug">
-            PJ Safaris
+            Malaso Safaris
           </h1>
           <p class="mt-4 text-lg text-gray-600">
-       PJ Safaris is a leading tours and travel company in Kenya, specializing in unforgettable safari experiences across the country’s most iconic destinations. From the world-famous Maasai Mara to Amboseli, Tsavo, and Kenya’s stunning coastal regions, we create expertly planned tours that showcase the beauty of Africa’s wildlife, landscapes, and culture.
+      Malaso Safaris is a leading tours and travel company in Kenya, specializing in unforgettable safari experiences across the country’s most iconic destinations. From the world-famous Maasai Mara to Amboseli, Tsavo, and Kenya’s stunning coastal regions, we create expertly planned tours that showcase the beauty of Africa’s wildlife, landscapes, and culture.
 
 
           </p>
@@ -60,7 +79,7 @@
         </div>
         <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
           <img
-            src="https://res.cloudinary.com/dasrniwpk/image/upload/v1764569574/packages/gl7jr0qvgtpdpxwxtipk.webp"
+            src="/images/lions-home.jpeg"
             alt="Lions-Maasai-Mara"
             class="w-full"
           />
@@ -88,7 +107,7 @@
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
-              src="/images/home/Warriors-Academy-Saruni-Samburu.jpg"
+              src="/images/maasai-men-jumping.jpeg"
               alt="Samburu-Saruni"
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -112,7 +131,7 @@
           >
             <img
               alt="maasai-mara"
-              src="/images/home/Lion-maasai-mara (4).jpg"
+              src="/images/fold2/WhatsApp Image 2026-05-30 at 9.20.00 AM (2).jpeg"
              
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -136,7 +155,7 @@
           >
             <img
               alt="maasai-mara"
-               src="/images/home/Coastal-Paradise.jpg"
+               src="/images/fold3/scuba-diving.jpeg"
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="p-4 flex flex-col flex-1">
@@ -274,8 +293,8 @@
     <section class="bg-[#f6f8fb] text-gray-800 px-6 py-12 md:px-16 lg:px-24">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
         <div class="md:w-1/2 flex flex-col justify-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-[#bf4226] mb-4">
-            Welcome to PJ Safaris
+          <h1 class="text-4xl md:text-5xl font-bold text-pr mb-4">
+            Welcome to Malaso Safaris
           </h1>
           <h2 class="text-xl md:text-2xl font-semibold text-gray-600">
             An Adventure Travel Company You Can Trust
@@ -312,6 +331,8 @@
       </div>
     </section>
 
+
+    
     <section>
 <BlogsCard :main-blogs="mainBlogs" :other-blogs="otherBlogs"/>
 

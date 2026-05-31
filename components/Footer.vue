@@ -169,10 +169,10 @@
               +254 759 857 032
             </a>
             <a
-              href="mailto:info@pjsafaris.site"
+              href="mailto:info@malasosafaris.com"
               class="text-white transition-colors duration-300 hover:underline"
             >
-              info@pjsafaris.site
+              info@malasosafaris.com
             </a>
           </div>
         </div>
@@ -182,26 +182,26 @@
         <a href="/">
           <img
             class="w-auto h-7"
-            src="https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png"
+            src="/images/home/malaso-logo.png"
             alt="logo"
           />
         </a>
         <p class="mt-4 text-sm sm:mt-0 text-white">
           © Copyright {{ yr }}.
           <a class="underline text-white" href="/" target="blank">
-            PJ Safari's
+            Malaso Safaris
           </a>
           All Rights Reserved.
         </p>
       </div>
 
-          <p class="mt-4 text-sm sm:mt-0 text-white">
+          <!-- <p class="mt-4 text-sm sm:mt-0 text-white">
           A craft of
           <a class="underline text-white font-black" href="https://www.jamesmukumu.co.ke" target="blank">
             JamesMukumu
           </a>
           
-        </p>
+        </p> -->
     </div>
   </footer>
 </template>

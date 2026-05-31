@@ -4,12 +4,12 @@
 
     <div
       class="safaris flex justify-center items-center min-h-screen w-full bg-cover bg-center"
-      style="
-        background-image: url(https://res.cloudinary.com/dasrniwpk/image/upload/v1764569574/packages/gl7jr0qvgtpdpxwxtipk.webp);
-      "
+        :style="{
+      backgroundImage: `url(${bgUrl})`
+    }"
     >
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
-        Enjoy both bush and beach tours with PJ Safaris
+        Enjoy both bush and beach tours with Malaso Safaris
       </h1>
     </div>
 
@@ -19,11 +19,11 @@
           <h2
             class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide"
           >
-          Discover Africa’s Top Bush and Beach Tours with PJ Safaris
+          Discover Africa’s Top Bush and Beach Tours with Malaso Safaris
           </h2>
 
           <p class="mt-6 text-lg leading-relaxed text-gray-600">
-            Discover the best tailor made safaris in Kenya and Africa with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.
+            Discover the best tailor made safaris in Kenya and Africa with Malaso Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.
           </p>
 
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
@@ -86,4 +86,6 @@ ogDescription:Descp,
 ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
 
 })
+
+let bgUrl = "http://localhost:3000/images/fold3/mt-lion.jpeg"
 </script>

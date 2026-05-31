@@ -4,7 +4,7 @@
       <h2 class="heading-font text-4xl md:text-5xl font-bold text-black mb-4">
         Latest Travel Guides
       </h2>
-      <div class="w-24 h-1 bg-[#bf4226] mx-auto"></div>
+      <div class="w-24 h-1 bg-pr mx-auto"></div>
       <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
         Always Keep yourself in the loop of the latest travel updates in Kenya
         and Africa

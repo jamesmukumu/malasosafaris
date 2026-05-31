@@ -26,25 +26,25 @@ body {
 @layer utilities {
   /* Text color */
   .text-pr {
-    @apply text-[#bf4226];
+    @apply text-[#A87B49];
   }
 
   /* Background color */
   .bg-pr {
-    @apply bg-[#bf4226];
+    @apply bg-[#A87B49];
   }
 
   /* Border color */
   .border-pr {
-    @apply border-[#bf4226];
+    @apply border-[#A87B49];
   }
 
   /* Hover states */
   .hover\:bg-pr:hover {
-    @apply bg-[#bf4226];
+    @apply bg-[#A87B49];
   }
 
   .hover\:text-pr:hover {
-    @apply text-[#bf4226];
+    @apply text-[#A87B49];
   }
 }

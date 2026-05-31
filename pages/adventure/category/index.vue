@@ -5,7 +5,7 @@
     <div
       class="safaris flex justify-center items-center min-h-screen w-full bg-cover bg-center"
       style="
-        background-image: url(https://res.cloudinary.com/dasrniwpk/image/upload/v1765111813/top-mountain-with-trees_kshg3c.jpg);
+        background-image: url('/images/sun-new.jpeg');
       "
     >
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
@@ -20,12 +20,12 @@
             class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide"
           >
             Uncover Africa’s Most Breathtaking Bush and Beach Experiences with
-            PJ Safaris.
+            Malaso Safaris.
           </h2>
 
           <p class="mt-6 text-lg leading-relaxed text-gray-600">
             Discover the best tailor-made adventures in Kenya and across Africa
-            with PJ Safaris. From thrilling mountain climbs and immersive
+            with Malaso Safaris. From thrilling mountain climbs and immersive
             wildlife encounters to luxury lodges, beach escapes, and custom-made
             itineraries across the Maasai Mara, Diani, Amboseli, Serengeti,
             Zanzibar, and beyond — your perfect journey starts here.

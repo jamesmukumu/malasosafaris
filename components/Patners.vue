@@ -8,7 +8,7 @@
           Our Trusted Partners
         </h2>
 
-        <div class="w-24 h-1 bg-[#bf4226] mx-auto"></div>
+        <div class="w-24 h-1 bg-pr mx-auto"></div>
 
         <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
           We collaborate with industry leaders to bring you the most exceptional safari experiences across Africa.
@@ -34,7 +34,7 @@
           </h3>
 
           <p class="text-gray-600 text-sm leading-relaxed">
-            PJ Safaris is honored to partner with USTOA, the premier umbrella organization for tourism in the USA, renowned for its integrity and commitment to ethical travel.
+            Malaso Safaris is honored to partner with USTOA, the premier umbrella organization for tourism in the USA, renowned for its integrity and commitment to ethical travel.
           </p>
 
         </div>
@@ -76,7 +76,7 @@
           </h3>
 
           <p class="text-gray-600 text-sm leading-relaxed">
-            Magical Kenya has been an invaluable partner, helping PJ Safaris deliver exceptional tours and travel experiences across the Rift Valley and throughout the country.
+            Magical Kenya has been an invaluable partner, helping Malaso Safaris deliver exceptional tours and travel experiences across the Rift Valley and throughout the country.
           </p>
 
         </div>
