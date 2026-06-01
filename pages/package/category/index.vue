@@ -4,12 +4,12 @@
 
     <div
       class="safaris flex justify-center items-center min-h-screen w-full bg-cover bg-center"
-        :style="{
-      backgroundImage: `url(${bgUrl})`
-    }"
+      :style="{
+        backgroundImage: `url(${bgUrl})`,
+      }"
     >
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">
-        Enjoy both bush and beach tours with Malaso Safaris
+        Enjoy both bush and beach tours with Malaso Africa Safaris
       </h1>
     </div>
 
@@ -19,11 +19,15 @@
           <h2
             class="text-4xl md:text-5xl font-light text-gray-900 tracking-wide"
           >
-          Discover Africa’s Top Bush and Beach Tours with Malaso Safaris
+            Discover Africa’s Top Bush and Beach Tours with Malaso Africa
+            Safaris
           </h2>
 
           <p class="mt-6 text-lg leading-relaxed text-gray-600">
-            Discover the best tailor made safaris in Kenya and Africa with Malaso Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.
+            Discover the best tailor made safaris in Kenya and Africa with
+            Malaso Africa Safaris. Explore unforgettable wildlife experiences,
+            luxury safari lodges, beach escapes, and tailor-made tour packages
+            across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.
           </p>
 
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
@@ -56,11 +60,7 @@
               class="absolute top-2 right-2 bg-pr text-white text-m px-2 py-1 rounded"
             >
               {{ package_category.packages_count }}
-              {{
-                package_category.packages_count > 1
-                  ? "Safaris"
-                  : "Safari"
-              }}
+              {{ package_category.packages_count > 1 ? "Safaris" : "Safari" }}
             </span>
           </NuxtLink>
         </div>
@@ -75,17 +75,17 @@
 let { data, pending, error } = await useFetch("/api/packages_category");
 let package_categories = ref(data.value.rows ?? []);
 
-
-let Title = 'Kenya Safari Packages | Masai Mara, Amboseli & Diani'
-let Descp = 'Choose from our exciting safari packages across Kenya, including Masai Mara, Amboseli, and Lake Naivasha. From luxury lodges to budget-friendly adventures, find the perfect safari for you.'
+let Title = "Kenya Safari Packages | Masai Mara, Amboseli & Diani";
+let Descp =
+  "Choose from our exciting safari packages across Kenya, including Masai Mara, Amboseli, and Lake Naivasha. From luxury lodges to budget-friendly adventures, find the perfect safari for you.";
 useSeoMeta({
-title:Title,
-description:Descp,
-ogTitle:Title,
-ogDescription:Descp,
-ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+  title: Title,
+  description: Descp,
+  ogTitle: Title,
+  ogDescription: Descp,
+  ogImage:
+    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+});
 
-})
-
-let bgUrl = "http://localhost:3000/images/fold3/mt-lion.jpeg"
+let bgUrl = "http://localhost:3000/images/fold3/mt-lion.jpeg";
 </script>

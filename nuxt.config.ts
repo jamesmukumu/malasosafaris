@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  colorMode:{
+preference: 'light',
+  fallback: 'light'
+  },
   modules: [
     '@nuxt/ui',
     '@nuxtjs/seo',
@@ -12,7 +16,8 @@ export default defineNuxtConfig({
     "@vercel/analytics",
     "@vercel/speed-insights",
     '@nuxtjs/leaflet',
-    `@twicpics/components/nuxt3`
+    `@twicpics/components/nuxt3`,
+    "@nuxt/fonts"
   ],
   twicpics:{
   domain:"https://pjsafaris.twic.pics"

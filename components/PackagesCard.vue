@@ -41,13 +41,13 @@
             </span>
           </p>
 
-          <span
-          
+          <NuxtLink
+          :to="`/tour/${pck.package_slug}`"
             class="text-sm  text-pr hover:underline"
           >
             View Package
-          </span>
-        </div>
+          </NuxtLink>
+        </div> 
       </div>
     </div>
    </div> 

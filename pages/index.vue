@@ -2,45 +2,49 @@
   <div>
     <Header />
 
-
     <!-- video section -->
-<section class="relative w-full overflow-hidden">
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-    class="w-full h-[70vh] lg:h-[85vh] object-cover"
-  >
-    <source
-      src="/images/home/video/home-video.mp4"
-      type="video/mp4"
-    />
-  </video>
+    <section class="relative w-full overflow-hidden">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        class="w-full h-[70vh] lg:h-[85vh] object-cover"
+      >
+        <source src="/images/home/video/home-video.mp4" type="video/mp4" />
+      </video>
 
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center bg-black/30"
+      >
+        <p class="text-white text-s lg:text-sm tracking-[0.2em] uppercase mb-4">
+          -- WELCOME TO Malaso Africa Safaris --
+        </p>
 
-  <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/30">
-   
-    <p class="text-white text-s lg:text-sm tracking-[0.2em] uppercase mb-4">
-     -- WELCOME TO MALASO SAFARIS --
-    </p>
+        <h1
+          class="text-white text-5xl lg:text-7xl font-bold text-center max-w-4xl mb-8"
+        >
+          True Heartbeat Of <br />
+          The Wild
+        </h1>
 
-    <h1 class="text-white text-5xl lg:text-7xl font-bold text-center max-w-4xl mb-8">
-      True Heartbeat Of <br /> The Wild
-    </h1>
-
-
-    <div class="flex gap-4 flex-col sm:flex-row">
-      <NuxtLink to="/contact" class="px-8 py-3 bg-black/60 hover:bg-black/80 text-white uppercase text-sm font-semibold tracking-wider transition">
-        REQUEST SAFARI QUOTE
-      </NuxtLink>
-      <NuxtLink to="/package/category" class="px-8 py-3 bg-pr hover:bg-pr text-white uppercase text-sm font-semibold tracking-wider transition">
-        EXPLORE SAFARIS
-      </NuxtLink>
-    </div>
-  </div>
-</section>
+        <div class="flex gap-4 flex-col sm:flex-row">
+          <NuxtLink
+            to="/contact"
+            class="px-8 py-3 bg-black/60 hover:bg-black/80 text-white uppercase text-sm font-semibold tracking-wider transition"
+          >
+            REQUEST SAFARI QUOTE
+          </NuxtLink>
+          <NuxtLink
+            to="/package/category"
+            class="px-8 py-3 bg-pr hover:bg-pr text-white uppercase text-sm font-semibold tracking-wider transition"
+          >
+            EXPLORE SAFARIS
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
 
     <!-- <section>
       <UCarousel
@@ -75,21 +79,21 @@
       </UCarousel>
     </section> -->
 
-
-
-
-     <section class="bg-white py-12">
+    <section class="bg-white py-12">
       <div
         class="container mx-auto px-6 flex flex-col md:flex-row items-center"
       >
         <div class="md:w-1/2 md:pr-12">
-          <h1 class="text-3xl  md:text-4xl font-bold text-gray-800 leading-snug">
-            Malaso Safaris
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
+            Malaso Africa Safaris
           </h1>
           <p class="mt-4 text-lg text-gray-600">
-      Malaso Safaris is a leading tours and travel company in Kenya, specializing in unforgettable safari experiences across the country’s most iconic destinations. From the world-famous Maasai Mara to Amboseli, Tsavo, and Kenya’s stunning coastal regions, we create expertly planned tours that showcase the beauty of Africa’s wildlife, landscapes, and culture.
-
-
+            Malaso Africa Safaris is a leading tours and travel company in
+            Kenya, specializing in unforgettable safari experiences across the
+            country’s most iconic destinations. From the world-famous Maasai
+            Mara to Amboseli, Tsavo, and Kenya’s stunning coastal regions, we
+            create expertly planned tours that showcase the beauty of Africa’s
+            wildlife, landscapes, and culture.
           </p>
           <NuxtLink
             to="/contact"
@@ -109,10 +113,6 @@
       </div>
     </section>
 
-
-
-
-
     <section class="m-4">
       <h2
         class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
@@ -125,7 +125,7 @@
           class="grid place-content-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           <NuxtLink
-          to="/package/category"
+            to="/package/category"
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
@@ -138,23 +138,19 @@
               <p class="mt-2 text-sm text-gray-600 flex-1">
                 Conquer Africa’s tallest mountains with our Expert Guides.
               </p>
-              <span
-              
-                class="mt-3 inline-flex items-center text-pr"
-              >
+              <span class="mt-3 inline-flex items-center text-pr">
                 More Info →
               </span>
             </div>
           </NuxtLink>
 
           <NuxtLink
-          to="/package/category"
+            to="/package/category"
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
               alt="maasai-mara"
               src="/images/fold2/WhatsApp Image 2026-05-30 at 9.20.00 AM (2).jpeg"
-             
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="p-4 flex flex-col flex-1">
@@ -172,12 +168,12 @@
           </NuxtLink>
 
           <NuxtLink
-          to="/package/category"
+            to="/package/category"
             class="flex flex-col overflow-hidden cursor-pointer rounded-md shadow-lg group"
           >
             <img
               alt="maasai-mara"
-               src="/images/fold3/scuba-diving.jpeg"
+              src="/images/fold3/scuba-diving.jpeg"
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="p-4 flex flex-col flex-1">
@@ -185,10 +181,7 @@
               <p class="mt-2 text-sm text-gray-600 flex-1">
                 Explore Kenya`s` Sandy White Coastal Beaches .
               </p>
-              <span
-             
-                class="mt-3 inline-flex items-center text-pr"
-              >
+              <span class="mt-3 inline-flex items-center text-pr">
                 More Info →
               </span>
             </div>
@@ -197,11 +190,6 @@
       </div>
     </section>
 
-
-
-
-
-    
     <h2
       class="heading-font text-4xl md:text-5xl text-center font-bold text-black mb-4"
     >
@@ -310,13 +298,11 @@
       </div>
     </section>
 
-   
-
     <section class="bg-[#f6f8fb] text-gray-800 px-6 py-12 md:px-16 lg:px-24">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
         <div class="md:w-1/2 flex flex-col justify-center">
           <h1 class="text-4xl md:text-5xl font-bold text-pr mb-4">
-            Welcome to Malaso Safaris
+            Welcome to Malaso Africa Safaris
           </h1>
           <h2 class="text-xl md:text-2xl font-semibold text-gray-600">
             An Adventure Travel Company You Can Trust
@@ -326,8 +312,8 @@
         <div class="md:w-1/2 space-y-6 text-lg md:text-xl leading-relaxed">
           <p>
             Over half a decade under the African sun, etched in memories,
-            whispered in the wind, and forever imprinted on countless souls, Malaso
-            Safaris isn’t just a travel company; it’s a portal to Kenya’s
+            whispered in the wind, and forever imprinted on countless souls,
+            Malaso Safaris isn’t just a travel company; it’s a portal to Kenya’s
             vibrant symphony, a canvas where your wild travel dreams meet the
             earth’s untamed pulse.
           </p>
@@ -336,33 +322,30 @@
             custodians of this awe-inspiring land.
           </p>
           <p>
-            More than just a travel company, Malaso Safaris is a family of friends,
-            united by a passion for crafting unforgettable experiences. With
-            over 6 years of combined experience, we’re not just tour operators;
-            we’re your adventure architects, weaving journeys as diverse as our
-            land itself.
+            More than just a travel company, Malaso Africa Safaris is a family
+            of friends, united by a passion for crafting unforgettable
+            experiences. With over 6 years of combined experience, we’re not
+            just tour operators; we’re your adventure architects, weaving
+            journeys as diverse as our land itself.
           </p>
           <p>
-            At Malaso Safaris, we understand that family adventures are woven with
-            laughter, wonder, and the occasional meltdown. We’re not just safari
-            experts; we’re family travel gurus, crafting experiences that ignite
-            curiosity, strengthen bonds, and leave footprints on magnificent
-            landscapes.
+            At Malaso Africa Safaris, we understand that family adventures are
+            woven with laughter, wonder, and the occasional meltdown. We’re not
+            just safari experts; we’re family travel gurus, crafting experiences
+            that ignite curiosity, strengthen bonds, and leave footprints on
+            magnificent landscapes.
           </p>
         </div>
       </div>
     </section>
 
-
-    
     <section>
-<BlogsCard :main-blogs="mainBlogs" :other-blogs="otherBlogs"/>
-
+      <BlogsCard :main-blogs="mainBlogs" :other-blogs="otherBlogs" />
     </section>
     <div>
-      <Patners/>
+      <Patners />
     </div>
-  
+
     <Footer />
   </div>
 </template>
@@ -374,20 +357,20 @@ const { data, pending, error } = await useFetch("/api/home");
 
 var imgs = await useFetch("/api/cloudinary");
 const packages = computed(() => data.value?.packages || []);
-const blogs = computed(()=>data.value?.blogs || [])
-const mainBlogs = computed(()=>blogs.value.slice(0,2))
-var otherBlogs = computed(()=>blogs.value.slice(2))
+const blogs = computed(() => data.value?.blogs || []);
+const mainBlogs = computed(() => blogs.value.slice(0, 2));
+var otherBlogs = computed(() => blogs.value.slice(2));
 
 let homeImages = imgs.data.value.images ?? [];
 
-
-
 useSeoMeta({
-title:"Top Holidays Deals | Kenya &amp; International Destinations",
-description:"Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
-ogTitle:"Top Holidays Deals | Kenya &amp; International Destinations",
-ogDescription:"Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
-ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
-
-})
+  title: "Top Holidays Deals | Kenya &amp; International Destinations",
+  description:
+    "Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
+  ogTitle: "Top Holidays Deals | Kenya &amp; International Destinations",
+  ogDescription:
+    "Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
+  ogImage:
+    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+});
 </script>

@@ -12,7 +12,7 @@
           </div>
           <div class="hidden md:flex items-center space-x-2">
             <i class="fa-regular fa-envelope text-lg"></i>
-            <a href="mailto:info@malasosafaris.site">info@malasosafaris.com</a>
+            <a href="mailto:info@malasoafricasafaris.com">info@malasoafricasafaris.com</a>
           </div>
         </div>
 
@@ -30,7 +30,7 @@
       <NuxtLink to="/" class="flex items-center gap-3 shrink-0 group">
         <img
           src="/images/home/malaso-logo.png"
-          alt="Malaso Safaris logo"
+          alt="Malaso Africa Safaris logo"
           class="h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         />
         <div class="leading-tight hidden sm:block">
@@ -51,23 +51,91 @@
       <nav
         class="hidden lg:flex flex-1 items-center gap-6 text-base font-medium flex-wrap justify-center"
       >
-        <NuxtLink to="/" class="hover:text-pr">Home</NuxtLink>
-        <NuxtLink to="/destinations" class="hover:text-pr"
-          >Safari Packages</NuxtLink
+        <NuxtLink
+          to="/"
+          :class="[
+            'hover:text-pr',
+            isActive('/') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
         >
-        <NuxtLink to="/package/category" class="hover:text-pr"
-          >Beach Packages</NuxtLink
+          Home
+        </NuxtLink>
+        <NuxtLink
+          to="/package/category"
+          :class="[
+            'hover:text-pr',
+            isActive('/package/category')
+              ? 'pb-1 border-b-2 border-[#A87B49]'
+              : '',
+          ]"
         >
-        <NuxtLink to="/destinations" class="hover:text-pr"
-          >Destinations</NuxtLink
+          Safari Packages
+        </NuxtLink>
+        <NuxtLink
+          to="/package/category"
+          :class="[
+            'hover:text-pr',
+            isActive('/package/category')
+              ? 'pb-1 border-b-2 border-[#A87B49]'
+              : '',
+          ]"
         >
-        <NuxtLink to="/hotels" class="hover:text-pr">Hotels</NuxtLink>
-        <NuxtLink to="/adventure/category" class="hover:text-pr"
-          >Activities</NuxtLink
+          Beach Packages
+        </NuxtLink>
+        <NuxtLink
+          to="/destinations"
+          :class="[
+            'hover:text-pr',
+            isActive('/destinations') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
         >
-        <NuxtLink to="/gallery" class="hover:text-pr">Gallery</NuxtLink>
-        <NuxtLink to="/blogs" class="hover:text-pr">Blogs</NuxtLink>
-        <NuxtLink to="/aboutus" class="hover:text-pr">About Us</NuxtLink>
+          Destinations
+        </NuxtLink>
+        <NuxtLink
+          to="/hotels"
+          :class="[
+            'hover:text-pr',
+            isActive('/hotels') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
+        >
+          Hotels
+        </NuxtLink>
+        <NuxtLink
+          to="/adventure/category"
+          :class="[
+            'hover:text-pr',
+            isActive('/adventure') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
+        >
+          Activities
+        </NuxtLink>
+        <NuxtLink
+          to="/gallery"
+          :class="[
+            'hover:text-pr',
+            isActive('/gallery') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
+        >
+          Gallery
+        </NuxtLink>
+        <NuxtLink
+          to="/blogs"
+          :class="[
+            'hover:text-pr',
+            isActive('/blogs') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
+        >
+          Blogs
+        </NuxtLink>
+        <NuxtLink
+          to="/aboutus"
+          :class="[
+            'hover:text-pr',
+            isActive('/aboutus') ? 'pb-1 border-b-2 border-[#A87B49]' : '',
+          ]"
+        >
+          About Us
+        </NuxtLink>
 
         <NuxtLink
           to="/contact"
@@ -125,8 +193,15 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 
 const isOpen = ref(false);
+const route = useRoute();
+
+const isActive = (path) => {
+  if (path === "/") return route.path === "/";
+  return route.path.startsWith(path);
+};
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;

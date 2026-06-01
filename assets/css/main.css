@@ -5,28 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global font smoothing - fixes blur in Edge, Firefox, Safari */
-@layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
 
-  body {
-    @apply bg-gray-50;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-}
 
 /* Components */
 @layer components {
   .btn {
     @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+   
   }
 
   .card {
