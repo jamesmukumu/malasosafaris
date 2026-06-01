@@ -56,7 +56,7 @@
         </div>
 
         <aside class="w-full overflow-x-hidden lg:flex-1 lg:max-w-[450px] xl:max-w-[500px]">
-          <BookingsCard :hotel="hotel" :message="`Hello PJ Safaris, i would wish to get a quote/book ${hotel.hotel_name}`" />
+          <BookingsCard :hotel="hotel" :message="`Hello MalasoAfrica Safaris, i would wish to get a quote/book ${hotel.hotel_name}`" />
         </aside>
       </div>
     </div>
