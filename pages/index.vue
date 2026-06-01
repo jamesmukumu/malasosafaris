@@ -326,7 +326,7 @@
         <div class="md:w-1/2 space-y-6 text-lg md:text-xl leading-relaxed">
           <p>
             Over half a decade under the African sun, etched in memories,
-            whispered in the wind, and forever imprinted on countless souls, PJ
+            whispered in the wind, and forever imprinted on countless souls, Malaso
             Safaris isn’t just a travel company; it’s a portal to Kenya’s
             vibrant symphony, a canvas where your wild travel dreams meet the
             earth’s untamed pulse.
@@ -336,14 +336,14 @@
             custodians of this awe-inspiring land.
           </p>
           <p>
-            More than just a travel company, PJ Safaris is a family of friends,
+            More than just a travel company, Malaso Safaris is a family of friends,
             united by a passion for crafting unforgettable experiences. With
             over 6 years of combined experience, we’re not just tour operators;
             we’re your adventure architects, weaving journeys as diverse as our
             land itself.
           </p>
           <p>
-            At PJ Safaris, we understand that family adventures are woven with
+            At Malaso Safaris, we understand that family adventures are woven with
             laughter, wonder, and the occasional meltdown. We’re not just safari
             experts; we’re family travel gurus, crafting experiences that ignite
             curiosity, strengthen bonds, and leave footprints on magnificent
