@@ -8,7 +8,7 @@
         <div class="flex items-center space-x-6">
           <div class="flex items-center space-x-2">
             <i class="fa-solid fa-phone text-lg"></i>
-            <span>+254 717 054 283</span>
+            <span>+254 756 892 686</span>
           </div>
           <div class="hidden md:flex items-center space-x-2">
             <i class="fa-regular fa-envelope text-lg"></i>
@@ -27,12 +27,24 @@
 
     <!-- Main Nav -->
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <NuxtLink to="/">
+      <NuxtLink to="/" class="flex items-center gap-3 shrink-0 group">
         <img
           src="/images/home/malaso-logo.png"
-          alt="Logo"
-          class="h-18 w-auto object-contain"
+          alt="Malaso Safaris logo"
+          class="h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         />
+        <div class="leading-tight hidden sm:block">
+          <div
+            class="text-lg md:text-xl font-extrabold tracking-[0.18em] uppercase text-[#A87B49]"
+          >
+            Malaso
+          </div>
+          <div
+            class="text-xs md:text-sm font-semibold tracking-[0.32em] uppercase text-gray-700/80"
+          >
+            Safaris
+          </div>
+        </div>
       </NuxtLink>
 
       <!-- Desktop Nav -->
@@ -55,9 +67,7 @@
         >
         <NuxtLink to="/gallery" class="hover:text-pr">Gallery</NuxtLink>
         <NuxtLink to="/blogs" class="hover:text-pr">Blogs</NuxtLink>
-        <NuxtLink to="/about/us" class="hover:text-pr"
-          >About Us</NuxtLink
-        >
+        <NuxtLink to="/aboutus" class="hover:text-pr">About Us</NuxtLink>
 
         <NuxtLink
           to="/contact"

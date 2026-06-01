@@ -29,10 +29,12 @@
 
           <ul class="space-y-4 text-gray-700 text-lg">
             <li>
-              <strong>Tel No:</strong> +254 717 054283
+              <strong>Tel No:</strong> 
++254 756 892 686
             </li>
             <li>
-              <strong>Mobile:</strong> +254 759 857 032
+              <strong>Mobile:</strong> 
++254 756 892 686
             </li>
          
             <li>

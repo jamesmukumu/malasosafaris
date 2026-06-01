@@ -4,7 +4,7 @@
 
 
     <!-- video section -->
-    <section class="w-full overflow-hidden">
+<section class="relative w-full overflow-hidden">
   <video
     autoplay
     muted
@@ -18,6 +18,28 @@
       type="video/mp4"
     />
   </video>
+
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/30">
+   
+    <p class="text-white text-s lg:text-sm tracking-[0.2em] uppercase mb-4">
+     -- WELCOME TO MALASO SAFARIS --
+    </p>
+
+    <h1 class="text-white text-5xl lg:text-7xl font-bold text-center max-w-4xl mb-8">
+      True Heartbeat Of <br /> The Wild
+    </h1>
+
+
+    <div class="flex gap-4 flex-col sm:flex-row">
+      <NuxtLink to="/contact" class="px-8 py-3 bg-black/60 hover:bg-black/80 text-white uppercase text-sm font-semibold tracking-wider transition">
+        REQUEST SAFARI QUOTE
+      </NuxtLink>
+      <NuxtLink to="/package/category" class="px-8 py-3 bg-pr hover:bg-pr text-white uppercase text-sm font-semibold tracking-wider transition">
+        EXPLORE SAFARIS
+      </NuxtLink>
+    </div>
+  </div>
 </section>
 
     <!-- <section>

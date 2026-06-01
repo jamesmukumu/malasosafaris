@@ -45,6 +45,13 @@
         class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         <div>
+              <a href="/">
+          <img
+            class="w-auto h-7"
+            src="/images/home/malaso-logo.png"
+            alt="logo"
+          />
+        </a>
           <h1 class="font-semibold text-xl text-white">Destinations</h1>
           <div class="flex flex-col items-start mt-5 space-y-2">
             <NuxtLink
@@ -166,7 +173,8 @@
               href="tel:+254705769896"
               class="text-white transition-colors duration-300 hover:underline"
             >
-              +254 759 857 032
+              
++254 756 892 686
             </a>
             <a
               href="mailto:info@malasosafaris.com"
@@ -179,13 +187,7 @@
       </div>
 
       <div class="flex flex-col items-center justify-between sm:flex-row">
-        <a href="/">
-          <img
-            class="w-auto h-7"
-            src="/images/home/malaso-logo.png"
-            alt="logo"
-          />
-        </a>
+    
         <p class="mt-4 text-sm sm:mt-0 text-white">
           © Copyright {{ yr }}.
           <a class="underline text-white" href="/" target="blank">
