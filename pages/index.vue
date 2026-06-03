@@ -18,7 +18,7 @@
       <div
         class="absolute inset-0 flex flex-col items-center justify-center bg-black/30"
       >
-        <p class="text-white text-s lg:text-sm tracking-[0.2em] uppercase mb-4">
+        <p class="text-white text-s lg:text-sm tracking-normal lg:tracking-[0.2em] uppercase mb-4">
           -- WELCOME TO Malaso Africa Safaris --
         </p>
 

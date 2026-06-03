@@ -42,7 +42,7 @@
           <div
             class="text-xs md:text-sm font-semibold tracking-[0.32em] uppercase text-gray-700/80"
           >
-            Safaris
+           Africa Safaris
           </div>
         </div>
       </NuxtLink>
@@ -71,17 +71,7 @@
         >
           Safari Packages
         </NuxtLink>
-        <NuxtLink
-          to="/package/category"
-          :class="[
-            'hover:text-pr',
-            isActive('/package/category')
-              ? 'pb-1 border-b-2 border-[#A87B49]'
-              : '',
-          ]"
-        >
-          Beach Packages
-        </NuxtLink>
+ 
         <NuxtLink
           to="/destinations"
           :class="[

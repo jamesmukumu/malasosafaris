@@ -18,7 +18,7 @@
 
         <!-- Form -->
         <div class="flex-1 w-full">
-          <BookingForm message="Hello Contact us" />
+          <BookingForm message="" />
         </div>
 
         <!-- Contact Info -->
@@ -49,8 +49,8 @@
           <ul class="space-y-4 text-gray-700 text-lg">
             <li>
               <strong>Email:</strong>
-              <a href="mailto:info@malasosafaris..com" class="text-blue-600 hover:underline ml-2">
-                info@malasosafaris.com
+              <a href="mailto:info@malasoafricasafaris.com" class="text-blue-600 hover:underline ml-2">
+                info@malasoafricasafaris.com
               </a>
             </li>
           </ul>
