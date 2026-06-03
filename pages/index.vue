@@ -313,7 +313,7 @@
           <p>
             Over half a decade under the African sun, etched in memories,
             whispered in the wind, and forever imprinted on countless souls,
-            Malaso Safaris isn’t just a travel company; it’s a portal to Kenya’s
+            Malaso Africa Safaris isn’t just a travel company; it’s a portal to Kenya’s
             vibrant symphony, a canvas where your wild travel dreams meet the
             earth’s untamed pulse.
           </p>
