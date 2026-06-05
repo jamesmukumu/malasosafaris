@@ -87,5 +87,5 @@ useSeoMeta({
     "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
 });
 
-let bgUrl = "http://localhost:3000/images/fold3/mt-lion.jpeg";
+let bgUrl = "/images/fold3/mt-lion.jpeg";
 </script>
