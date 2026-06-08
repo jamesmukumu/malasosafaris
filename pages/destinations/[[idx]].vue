@@ -29,7 +29,7 @@
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
         </div>
 
-        <div class="w-full flex justify-center">
+        <div v-if="destinations.length" class="w-full flex justify-center">
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <NuxtLink
               :to="`/destination/${destination.destination_slug}`"
@@ -62,10 +62,22 @@
             </NuxtLink>
           </div>
         </div>
+
+        <div
+          v-else
+          class="max-w-2xl mx-auto rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-12 text-center"
+        >
+          <h3 class="text-2xl font-semibold text-gray-900">
+            No destinations available yet
+          </h3>
+          <p class="mt-3 text-gray-600">
+            Please check back soon for updated travel destinations.
+          </p>
+        </div>
       </div>
     </section>
 
-    <div class="flex justify-center my-10">
+    <div v-if="total > limit" class="flex justify-center my-10">
       <UPagination
         v-model:page="currentPage"
         :items-per-page="limit"
@@ -97,7 +109,7 @@ const currentPage = computed({
   },
   set(value) {
     if (value === 1) {
-      router.push("/blogs"); // keep page 1 clean
+      router.push("/destinations");
     } else {
       router.push(`/blogs/${value}`);
     }
@@ -106,6 +118,9 @@ const currentPage = computed({
 
 const { data } = await useFetch(
   () => `/api/destinations?page=${currentPage.value}`,
+  {
+    default: () => ({ rows: [], count: 0 }),
+  },
 );
 
 const destinations = computed(() => data.value?.rows ?? []);
@@ -122,7 +137,7 @@ const maxPage = computed(() => Math.ceil(total.value / limit));
 if (
   isNaN(currentPage.value) ||
   currentPage.value < 1 ||
-  currentPage.value > maxPage.value
+  (total.value > 0 && currentPage.value > maxPage.value)
 ) {
   throw createError({
     statusCode: 404,

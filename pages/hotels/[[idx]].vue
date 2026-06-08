@@ -31,7 +31,10 @@
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          v-if="hotels.length"
+          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
           <NuxtLink
             :to="`/hotel/${hotel.slug}`"
             v-for="hotel in hotels"
@@ -63,10 +66,22 @@
             </div>
           </NuxtLink>
         </div>
+
+        <div
+          v-else
+          class="max-w-2xl mx-auto rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-12 text-center"
+        >
+          <h3 class="text-2xl font-semibold text-gray-900">
+            No accommodations available yet
+          </h3>
+          <p class="mt-3 text-gray-600">
+            Please check back soon for updated hotels and lodges.
+          </p>
+        </div>
       </div>
     </section>
 
-    <div class="flex justify-center my-10">
+    <div v-if="total > limit" class="flex justify-center my-10">
       <UPagination
         v-model:page="currentPage"
         :items-per-page="limit"
@@ -109,8 +124,11 @@ const currentPage = computed({
 /* -------------------------
    Fetch blogs from API based on page
 -------------------------- */
-const { data, pending, error } = await useFetch(
+const { data, pending } = await useFetch(
   () => `/api/hotels?page=${currentPage.value}`,
+  {
+    default: () => ({ hotels: [], count: 0 }),
+  },
 );
 
 /* -------------------------
@@ -130,7 +148,7 @@ const maxPage = computed(() => Math.ceil(total.value / limit));
 if (
   isNaN(currentPage.value) ||
   currentPage.value < 1 ||
-  currentPage.value > maxPage.value
+  (total.value > 0 && currentPage.value > maxPage.value)
 ) {
   throw createError({
     statusCode: 404,

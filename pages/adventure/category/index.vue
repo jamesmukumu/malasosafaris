@@ -32,7 +32,10 @@
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
         </div>
 
-        <div class="flex flex-wrap gap-6 items-stretch">
+        <div
+          v-if="adventures_categories.length"
+          class="flex flex-wrap gap-6 items-stretch"
+        >
           <NuxtLink
             :to="`/adventure/category/${adventure_category.adventure_slug}`"
             :key="adventure_category.id"
@@ -67,6 +70,18 @@
             </span>
           </NuxtLink>
         </div>
+
+        <div
+          v-else
+          class="max-w-2xl mx-auto rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-12 text-center"
+        >
+          <h3 class="text-2xl font-semibold text-gray-900">
+            No adventure categories yet
+          </h3>
+          <p class="mt-3 text-gray-600">
+            Please check back soon for new adventures.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -75,8 +90,10 @@
 </template>
 
 <script setup>
-let { data, pending, error } = await useFetch("/api/adventures_category");
-let adventures_categories = ref(data.value.rows ?? []);
+const { data, pending, error } = await useFetch("/api/adventures_category", {
+  default: () => ({ rows: [] }),
+});
+const adventures_categories = computed(() => data.value?.rows ?? []);
 
 let Title =
   "Enjoy Thrilling Adventures Across Africa | Mountain Climbing, Amboseli & Diani";

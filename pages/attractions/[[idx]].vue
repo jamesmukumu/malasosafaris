@@ -29,14 +29,15 @@
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          v-if="attractions.length"
+          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
           <NuxtLink
-          :to="`/attraction/${attraction.attraction_slug}`"
+            :to="`/attraction/${attraction.attraction_slug}`"
             :key="attraction.id"
             v-for="attraction in attractions"
-            class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden
-                         hover:shadow-xl transition
-                         grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px] "
+            class="flex relative cursor-pointer flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition grow-0 basis-[300px] md:basis-[320px] lg:basis-[350px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
               <img
@@ -61,10 +62,22 @@
             </span>
           </NuxtLink>
         </div>
+
+        <div
+          v-else
+          class="max-w-2xl mx-auto rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-12 text-center"
+        >
+          <h3 class="text-2xl font-semibold text-gray-900">
+            No attractions available
+          </h3>
+          <p class="mt-3 text-gray-600">
+            Please check back soon for new attractions and points of interest.
+          </p>
+        </div>
       </div>
     </section>
 
-       <div class="flex justify-center my-10">
+    <div v-if="total > limit" class="flex justify-center my-10">
       <UPagination
         v-model:page="currentPage"
         :items-per-page="limit"
@@ -77,7 +90,7 @@
       />
     </div>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -103,14 +116,15 @@ const currentPage = computed({
 
 const { data, pending, error } = await useFetch(
   () => `/api/attractions?page=${currentPage.value}`,
+  {
+    default: () => ({ rows: [], count: 0 }),
+  },
 );
-console.error(error.value);
 
 /* -------------------------
    Extract reactive data
 -------------------------- */
 const attractions = computed(() => data.value?.rows ?? []);
-console.log(attractions);
 const total = computed(() => data.value?.count ?? 0);
 
 /* -------------------------
@@ -121,7 +135,7 @@ const maxPage = computed(() => Math.ceil(total.value / limit));
 if (
   isNaN(currentPage.value) ||
   currentPage.value < 1 ||
-  currentPage.value > maxPage.value
+  (total.value > 0 && currentPage.value > maxPage.value)
 ) {
   throw createError({
     statusCode: 404,
@@ -137,16 +151,15 @@ function toLink(page) {
   return `/attractions/${page}`;
 }
 
-
-
-let Title = 'Discover Africa’s Top Attractions with PJ Safaris'
-let Descp = 'Experience the breathtaking sights and unforgettable adventures that make Africa extraordinary with PJ Safaris, a leading tours and travel company in Kenya. Discover iconic safari destinations, diverse wildlife, stunning landscapes, and rich cultural experiences across Kenya and East Africa. From thrilling game drives in world-famous national parks to relaxing beach getaways and expertly guided tours, PJ Safaris creates personalized travel experiences for every type of traveler. Our team is dedicated to delivering exceptional service, carefully planned itineraries, and authentic African adventures that showcase the beauty of the continent. Whether you are planning a luxury safari, family holiday, honeymoon, or group adventure, PJ Safaris ensures a seamless and memorable journey from start to finish. Explore Africa the PJ Safaris way and create lasting memories with trusted local experts who understand the true spirit of African travel'
+let Title = "Discover Africa’s Top Attractions with PJ Safaris";
+let Descp =
+  "Experience the breathtaking sights and unforgettable adventures that make Africa extraordinary with PJ Safaris, a leading tours and travel company in Kenya. Discover iconic safari destinations, diverse wildlife, stunning landscapes, and rich cultural experiences across Kenya and East Africa. From thrilling game drives in world-famous national parks to relaxing beach getaways and expertly guided tours, PJ Safaris creates personalized travel experiences for every type of traveler. Our team is dedicated to delivering exceptional service, carefully planned itineraries, and authentic African adventures that showcase the beauty of the continent. Whether you are planning a luxury safari, family holiday, honeymoon, or group adventure, PJ Safaris ensures a seamless and memorable journey from start to finish. Explore Africa the PJ Safaris way and create lasting memories with trusted local experts who understand the true spirit of African travel";
 useSeoMeta({
-title:Title,
-description:Descp,
-ogTitle:Title,
-ogDescription:Descp,
-ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
-
-})
+  title: Title,
+  description: Descp,
+  ogTitle: Title,
+  ogDescription: Descp,
+  ogImage:
+    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+});
 </script>
