@@ -134,7 +134,7 @@ function toLink(page) {
   return `/blogs/${page}`;
 }
 
-let Title = "PJ Safaris Travel Posts";
+let Title = "Malaso Africa Safaris Travel Posts";
 let Descp =
   "Get information on Masai mara safaris, wildlife guides, travel planning advice, and the latest updates on the Masai Mara. Read expert blogs to make your safari unforgettable";
 useSeoMeta({

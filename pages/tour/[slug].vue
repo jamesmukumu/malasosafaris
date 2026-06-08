@@ -1,6 +1,5 @@
 <template>
   <div class="bg-white overflow-x-hidden">
-
     <Header />
 
     <!-- HERO -->
@@ -20,8 +19,9 @@
     </div>
 
     <section class="max-w-7xl mx-auto px-6 mt-12">
-
-      <h2 class="text-4xl md:text-5xl text-center font-light text-gray-900 mb-10">
+      <h2
+        class="text-4xl md:text-5xl text-center font-light text-gray-900 mb-10"
+      >
         {{ pck?.package_title }}
       </h2>
 
@@ -111,7 +111,7 @@
           :ui="{
             item: 'basis-full sm:basis-1/2 lg:basis-1/3 p-2',
             prev: 'sm:start-4',
-            next: 'sm:end-4'
+            next: 'sm:end-4',
           }"
         >
           <div class="aspect-square overflow-hidden rounded-xl">
@@ -126,9 +126,10 @@
 
       <!-- BOOK -->
       <div v-if="activeTab === 'book'">
-        <BookingForm :message="`Hello PJ Safaris i would wish to join ${pck.package_title}`"/>
+        <BookingForm
+          :message="`Hello Malaso Africa Safaris i would wish to join ${pck.package_title}`"
+        />
       </div>
-
     </section>
 
     <div class="m-2">
@@ -143,65 +144,63 @@
 </template>
 
 <script setup>
-const route = useRoute()
-const slug = route.params.slug
+const route = useRoute();
+const slug = route.params.slug;
 
-const { data } = await useFetch('/api/tour', {
-  query: { slug }
-})
+const { data } = await useFetch("/api/tour", {
+  query: { slug },
+});
 
 /* BUILD ITEMS WITH VALUE (CRITICAL FIX) */
-let itenerary = JSON.parse(data.value.rows[0].package_itenerary)
+let itenerary = JSON.parse(data.value.rows[0].package_itenerary);
 
 let plan_items = itenerary.map((item, idx) => ({
   label: `Day ${idx + 1} ${item.title}`,
-  value: `day-${idx}`, 
+  value: `day-${idx}`,
   overview: item.overview,
-  accomodation: item.Accomodation ?? '',
+  accomodation: item.Accomodation ?? "",
   mealPlan: item.mealPlan,
-  icon: "si:sun-line"
-}))
+  icon: "si:sun-line",
+}));
 
+const openItems = computed(() => plan_items.map((item) => item.value));
 
-const openItems = computed(() =>
-  plan_items.map(item => item.value)
-)
+const pck = computed(() => data.value?.rows?.[0] || {});
 
-const pck = computed(() => data.value?.rows?.[0] || {})
-
-const activeTab = ref('overview')
+const activeTab = ref("overview");
 
 const tabs = [
-  { label: 'Tour', value: 'overview' },
-  { label: 'Plan', value: 'plan' },
-  { label: 'Photos', value: 'photos' },
-  { label: 'Book', value: 'book' }
-]
+  { label: "Tour", value: "overview" },
+  { label: "Plan", value: "plan" },
+  { label: "Photos", value: "photos" },
+  { label: "Book", value: "book" },
+];
 
 const inclusionsRows = computed(() => {
   const inclusions = pck.value?.inclusions
-    ? pck.value.inclusions.split(',')
-    : []
+    ? pck.value.inclusions.split(",")
+    : [];
 
   const exclusions = pck.value?.exclusions
-    ? pck.value.exclusions.split(',')
-    : []
+    ? pck.value.exclusions.split(",")
+    : [];
 
-  const max = Math.max(inclusions.length, exclusions.length)
+  const max = Math.max(inclusions.length, exclusions.length);
 
   return Array.from({ length: max }).map((_, i) => ({
-    inclusion: inclusions[i] || '',
-    exclusion: exclusions[i] || (i === 1 ? 'Nothing not mentioned' : '')
-  }))
-})
+    inclusion: inclusions[i] || "",
+    exclusion: exclusions[i] || (i === 1 ? "Nothing not mentioned" : ""),
+  }));
+});
 
-let Pricer = priceFormatter
+let Pricer = priceFormatter;
 
 useSeoMeta({
   title: pck.value.package_title,
   description: pck.value.package_overview,
   ogTitle: pck.value.package_title,
   ogDescription: pck.value.package_overview,
-  ogImage: "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
-})
+  ogImage:
+    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+});
 </script>

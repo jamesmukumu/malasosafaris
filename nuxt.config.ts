@@ -36,7 +36,7 @@ sources:[
   app:{
     
     head:{
-    titleTemplate:"%s | PJ Safaris",
+    titleTemplate:"%s | Malaso Africa Safaris",
     link:[
          {
           rel: 'stylesheet',

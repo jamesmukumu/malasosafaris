@@ -154,12 +154,13 @@ function toLink(page) {
 }
 
 useSeoMeta({
-  title: "Discover Africa’s Top Travel Destinations with PJ Safaris",
+  title: "Discover Africa’s Top Travel Destinations with Malaso Africa Safaris",
   description:
-    "Discover the best safari destinations in Kenya and Africa with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
-  ogTitle: "Discover Africa’s Top Travel Destinations with PJ Safaris",
+    "Discover the best safari destinations in Kenya and Africa with Malaso Africa Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
+  ogTitle:
+    "Discover Africa’s Top Travel Destinations with Malaso Africa Safaris",
   ogDescription:
-    "Discover the best safari destinations in Kenya and Africa with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
+    "Discover the best safari destinations in Kenya and Africa with Malaso Africa Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
   ogImage:
     "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
 });

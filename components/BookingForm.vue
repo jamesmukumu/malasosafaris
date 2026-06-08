@@ -124,7 +124,7 @@
         <!-- MESSAGE -->
         <div>
           <textarea
-          disabled
+          
             v-model="form.message"
             rows="4"
             placeholder="Your Message"

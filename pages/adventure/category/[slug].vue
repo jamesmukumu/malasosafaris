@@ -24,9 +24,9 @@
 
           <p class="mt-6 text-lg leading-relaxed text-gray-600">
             Experience the perfect blend of coastal luxury and authentic African
-            wilderness with PJ Safaris. From Kenya’s pristine shores to its
-            world-renowned safari destinations, we curate tailor-made journeys
-            that capture the best of both worlds.
+            wilderness with Malaso Africa Safaris. From Kenya’s pristine shores
+            to its world-renowned safari destinations, we curate tailor-made
+            journeys that capture the best of both worlds.
           </p>
 
           <div class="w-32 h-[1px] bg-pr mt-3 mx-auto"></div>

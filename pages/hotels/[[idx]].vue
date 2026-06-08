@@ -167,7 +167,7 @@ function toLink(page) {
 let Title =
   "Hotels | Discover  1000+ hotels in Kenya and East Africa. Book your favourite hotels in Masai Mara, Nairobi, Nakuru Mombasa and Nanyuki and get an exclusive experience for your safari in kenya";
 let Descp =
-  "Discover the best safari destinations in Kenya and Afrca with PJ Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.";
+  "Discover the best safari destinations in Kenya and Afrca with Malaso Africa Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.";
 useSeoMeta({
   title: Title,
   description: Descp,
