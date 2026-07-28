@@ -63,9 +63,7 @@
           </h3>
 
           <p class="text-gray-600 text-sm leading-relaxed">
-            Operating the finest collection of luxury safari lodges across the
-            Serengeti, providing our guests with exceptional accommodation and
-            authentic African experiences.
+          Proudly verified and listed on SafariBookings, the world's largest marketplace for African safari tours
           </p>
         </div>
 

@@ -153,6 +153,7 @@
               src="/images/fold2/WhatsApp Image 2026-05-30 at 9.20.00 AM (2).jpeg"
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            //
             <div class="p-4 flex flex-col flex-1">
               <h3 class="text-lg font-semibold">Masai Mara Migration</h3>
               <p class="mt-2 text-sm text-gray-600 flex-1">
