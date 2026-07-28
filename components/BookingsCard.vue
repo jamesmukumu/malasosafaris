@@ -59,24 +59,36 @@ async function handleSubmit() {
   save.value = true
 
   const payload = {
-    firstName: form.firstName,
+     firstName: form.firstName,
     lastName: form.lastName,
     email: form.email,
     phone: form.phone,
     Nationality: form.Nationality,
-    message: form.message
+    message: form.message,
+    adults_count:form.adults,
+    children_count:form.children,
+    start_stay_date:form.checkIn,
+    end_stay_date:form.checkOut
   }
 let toast = useToast()
   try {
-    const resp = await useFetch('/api/enquiry', {
+    const {data,error,pending} = await useFetch('/api/enquiry', {
       method: 'POST',
       body: payload
     })
-
+if(data.value.success){
 toast.add({
-title:"Enquriy Added",
+title:"Enquiry Added",
 description:"Enquiry Received Successfully"
 })
+}else{
+  toast.add({
+title:"Failed",
+description:"Something Went Wrong",
+color:'error'
+})
+
+}
   } catch (err) {
     console.error(err)
     toast.add({

@@ -54,32 +54,32 @@
           <h1 class="font-semibold text-xl text-white">Destinations</h1>
           <div class="flex flex-col items-start mt-5 space-y-2">
             <NuxtLink
-              to="/destination/Tsavo-West"
+              to="/destinations"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Tsavo West
             </NuxtLink>
             <NuxtLink
-              to="/destination/Lake-Naivasha"
+              to="/destinations"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Naivasha
             </NuxtLink>
             <NuxtLink
-              to="/destination/Maasai-Mara"
+              to="/destination/masai-mara-national-reserve-the-worlds-greatest-wildlife-theatre"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Maasai Mara
             </NuxtLink>
             <NuxtLink
-              to="/destination/Amboseli"
+              to="/destination/amboseli-national-park-the-land-of-giants"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Amboseli
             </NuxtLink>
 
             <NuxtLink
-              to="/destination/Samburu"
+              to="/destination/samburu-national-reserve-rugged-wilderness-and-the-special-five"
               class="transition-colors duration-300 text-white hover:underline"
             >
               Samburu
@@ -91,20 +91,20 @@
           <p class="font-semibold text-xl text-white">Quick Links</p>
           <div class="flex flex-col items-start mt-5 space-y-2">
             <NuxtLink
-              to="/package/category/Maasai-Mara-Packages"
+              to="/package/category"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Kenya Safari Packages
             </NuxtLink>
             <NuxtLink
-              to="/package/category/Maasai-Mara-Packages"
+              to="/package/category/Masai-Mara-Wildbeest-Migration-Safari-Packages"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Maasai Mara Packages
             </NuxtLink>
 
             <NuxtLink
-              to="/package/category"
+              to="/package/category/Amboseli-National-Park-Packages"
               class="transition-colors text-white duration-300 hover:underline"
             >
               Amboseli National Park Packages
@@ -218,10 +218,19 @@ async function SaveEmail() {
       },
       method: "POST",
     });
-    toast.add({
+    if(resp.success){
+   toast.add({
       title: "Success",
       description: "Added to newsletters successfully",
     });
+    }else{
+      toast.add({
+      title: "Failed",
+      description: "Something Went Wrong",
+      color:'error'
+    });
+    }
+ 
   } catch (err) {
     toast.add({
       title: "Error",

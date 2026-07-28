@@ -5,11 +5,13 @@ let {rows} = await pool.query(
 "INSERT INTO bulk_mails (email) VALUES ($1) RETURNING *",[body.email]
 )
 return {
-rows
+success:true
 }
 }catch(err){
 console.error(err)
-return err
+return {
+success:false
+}
 }
 
 })

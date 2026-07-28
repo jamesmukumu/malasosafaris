@@ -212,7 +212,12 @@ async function handleSubmit() {
     email: form.email,
     phone: form.phone,
     Nationality: form.Nationality,
-    message: form.message
+    message: form.message,
+    AdultsCount:form.adults,
+    KidsAges:form.children,
+    StartStayDate:form.checkIn,
+    EndStayDate:form.checkOut
+
   }
 let toast = useToast()
   try {
@@ -220,7 +225,7 @@ let toast = useToast()
       method: 'POST',
       body: payload
     })
-
+console.log(resp)
 toast.add({
 title:"Enquriy Added",
 description:"Enquiry Received Successfully"

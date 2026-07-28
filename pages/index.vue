@@ -230,7 +230,7 @@
 
         <div class="flex flex-wrap gap-6 items-stretch">
           <NuxtLink
-            to="/hotel/Zebra-Plains-Mara-Camp"
+            to="/hotels"
             class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
@@ -252,7 +252,7 @@
           </NuxtLink>
 
           <NuxtLink
-            to="/hotel/Saruni-Mara-BaseCamp"
+            to="/hotels"
             class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
@@ -274,7 +274,7 @@
           </NuxtLink>
 
           <NuxtLink
-            to="/hotel/Angama-Mara-Lodge"
+            to="/hotels"
             class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex-1 min-w-[280px]"
           >
             <div class="aspect-[4/3] overflow-hidden">
