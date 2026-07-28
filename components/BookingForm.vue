@@ -213,10 +213,10 @@ async function handleSubmit() {
     phone: form.phone,
     Nationality: form.Nationality,
     message: form.message,
-    AdultsCount:form.adults,
-    KidsAges:form.children,
-    StartStayDate:form.checkIn,
-    EndStayDate:form.checkOut
+    adults_count:form.adults,
+    children_count:form.children,
+    start_stay_date:form.checkIn,
+    end_stay_date:form.checkOut
 
   }
 let toast = useToast()
