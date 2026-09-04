@@ -161,7 +161,6 @@ useSeoMeta({
     "Discover Africa’s Top Travel Destinations with Malaso Africa Safaris",
   ogDescription:
     "Discover the best safari destinations in Kenya and Africa with Malaso Africa Safaris. Explore unforgettable wildlife experiences, luxury safari lodges, beach escapes, and tailor-made tour packages across Maasai Mara, Diani, Amboseli, Serengeti, Zanzibar, and more.",
-  ogImage:
-    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+  ogImage: "/og-image_v2.png",
 });
 </script>

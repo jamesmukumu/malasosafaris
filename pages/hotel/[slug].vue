@@ -6,7 +6,9 @@
       <div
         class="flex flex-col lg:flex-row justify-between items-start gap-8 w-full max-w-[1300px] mx-auto bg-white shadow-lg rounded-xl p-4 sm:p-8 m-2 sm:m-5"
       >
-        <div class="flex flex-col gap-6 flex-[2] min-w-0 max-w-full overflow-x-hidden">
+        <div
+          class="flex flex-col gap-6 flex-[2] min-w-0 max-w-full overflow-x-hidden"
+        >
           <h1 class="text-3xl text-center font-bold">
             {{ hotel.hotel_name }}
           </h1>
@@ -55,14 +57,22 @@
           />
         </div>
 
-        <aside class="w-full overflow-x-hidden lg:flex-1 lg:max-w-[450px] xl:max-w-[500px]">
-          <BookingsCard :hotel="hotel" :message="`Hello MalasoAfrica Safaris, i would wish to get a quote/book ${hotel.hotel_name}`" />
+        <aside
+          class="w-full overflow-x-hidden lg:flex-1 lg:max-w-[450px] xl:max-w-[500px]"
+        >
+          <BookingsCard
+            :hotel="hotel"
+            :message="`Hello MalasoAfrica Safaris, i would wish to get a quote/book ${hotel.hotel_name}`"
+          />
         </aside>
       </div>
     </div>
-      <div>
-       <PckCard :packages="hotel.packages" :title="`Tours in ${hotel.hotel_name}`"/>
-      </div>
+    <div>
+      <PckCard
+        :packages="hotel.packages"
+        :title="`Tours in ${hotel.hotel_name}`"
+      />
+    </div>
     <Footer />
   </div>
 </template>
@@ -80,15 +90,13 @@ let { data, pending, error } = await useFetch("/api/hotel", {
 
 let hotel = ref(data.value[0]);
 
-let Title = hotel.value.hotel_name
-let Descp = hotel.value.hotel_overview
+let Title = hotel.value.hotel_name;
+let Descp = hotel.value.hotel_overview;
 useSeoMeta({
-title:Title,
-description:Descp,
-ogTitle:Title,
-ogDescription:Descp,
-ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
-
-})
-
+  title: Title,
+  description: Descp,
+  ogTitle: Title,
+  ogDescription: Descp,
+  ogImage: "/og-image_v2.png",
+});
 </script>

@@ -104,7 +104,6 @@ useSeoMeta({
   description: Descp,
   ogTitle: Title,
   ogDescription: Descp,
-  ogImage:
-    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+  ogImage: "/og-image_v2.png",
 });
 </script>

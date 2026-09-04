@@ -25,10 +25,10 @@
       </div>
 
       <aside class="w-full lg:flex-1 lg:max-w-[350px] self-start">
-        <RecommendationBlogs :blogs="relatedBlogs"/>
+        <RecommendationBlogs :blogs="relatedBlogs" />
       </aside>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -40,18 +40,15 @@ let { data, pending, error } = await useFetch("/api/blog", {
   query: { slug },
 });
 let blog = ref(data.value.blog[0]);
-let relatedBlogs = ref(data.value.related_blogs ?? [])
+let relatedBlogs = ref(data.value.related_blogs ?? []);
 
-
-
-let Title = blog.value.blog_title
-let Descp = blog.value.blog_description
+let Title = blog.value.blog_title;
+let Descp = blog.value.blog_description;
 useSeoMeta({
-title:Title,
-description:Descp,
-ogTitle:Title,
-ogDescription:Descp,
-ogImage:"https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
-
-})
+  title: Title,
+  description: Descp,
+  ogTitle: Title,
+  ogDescription: Descp,
+  ogImage: "/og-image_v2.png",
+});
 </script>

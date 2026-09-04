@@ -200,7 +200,6 @@ useSeoMeta({
   description: pck.value.package_overview,
   ogTitle: pck.value.package_title,
   ogDescription: pck.value.package_overview,
-  ogImage:
-    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+  ogImage: "/og-image_v2.png",
 });
 </script>

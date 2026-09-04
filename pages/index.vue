@@ -18,7 +18,9 @@
       <div
         class="absolute inset-0 flex flex-col items-center justify-center bg-black/30"
       >
-        <p class="text-white text-s lg:text-sm tracking-normal lg:tracking-[0.2em] uppercase mb-4">
+        <p
+          class="text-white text-s lg:text-sm tracking-normal lg:tracking-[0.2em] uppercase mb-4"
+        >
           -- WELCOME TO Malaso Africa Safaris --
         </p>
 
@@ -153,7 +155,7 @@
               src="/images/fold2/WhatsApp Image 2026-05-30 at 9.20.00 AM (2).jpeg"
               class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            
+
             <div class="p-4 flex flex-col flex-1">
               <h3 class="text-lg font-semibold">Masai Mara Migration</h3>
               <p class="mt-2 text-sm text-gray-600 flex-1">
@@ -314,9 +316,9 @@
           <p>
             Over half a decade under the African sun, etched in memories,
             whispered in the wind, and forever imprinted on countless souls,
-            Malaso Africa Safaris isn’t just a travel company; it’s a portal to Kenya’s
-            vibrant symphony, a canvas where your wild travel dreams meet the
-            earth’s untamed pulse.
+            Malaso Africa Safaris isn’t just a travel company; it’s a portal to
+            Kenya’s vibrant symphony, a canvas where your wild travel dreams
+            meet the earth’s untamed pulse.
           </p>
           <p>
             We are the storytellers, weavers of authentic experiences, and
@@ -371,7 +373,6 @@ useSeoMeta({
   ogTitle: "Top Holidays Deals | Kenya &amp; International Destinations",
   ogDescription:
     "Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now",
-  ogImage:
-    "https://res.cloudinary.com/dasrniwpk/image/upload/v1763984726/adventures/hpywfcpb3qa60jynzngm.png",
+  ogImage: "/og-image_v2.png",
 });
 </script>

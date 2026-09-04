@@ -30,7 +30,7 @@ preference: 'light',
    url:'https://www.malasoafricasafaris.com/',
    name:'Malaso Africa Safaris',
    description:'Premium Holiday Deals to Top-Rated Destinations in Kenya &amp; Beyond. Discounted Beach &amp; Safari Packages. Vacation to Exotic places like Dubai. Book Now',
-   image:"/apple-touch-icon.png"
+   image:"/og-image_v2.png"
   },
   sitemap:{
 autoLastmod:true,
