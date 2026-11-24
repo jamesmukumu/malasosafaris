@@ -31,7 +31,7 @@
 ## 📋 Step 1: Create GitHub Rulesets (15 minutes)
 
 **Follow this guide:**
-👉 `GITHUB_RULESETS_MANUAL_SETUP.md` (Section: "Step 2 - Step 4")
+👉 `GITHUB_RULESETS_MANUAL_SETUP.md`
 
 **What you're creating:**
 
