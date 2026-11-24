@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+.nuxt/
+dist/
+.output/
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Package manager lockfiles (optional, included for reproducibility)
+# package-lock.json
+# yarn.lock
+
+# Testing
+coverage/
+.nyc_output/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+*.pem
+*.key
+Thumbs.db
+
+# Documentation
+docs/
+README.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
