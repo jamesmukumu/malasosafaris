@@ -1,0 +1,143 @@
+{
+  "rulesets": [
+    {
+      "name": "Protect Main Branch - No Direct Push",
+      "description": "Protects the main branch from direct pushes. All changes must go through pull requests with successful CI/CD checks.",
+      "target": "branch",
+      "enforcement": "active",
+      "bypass_actors": [
+        {
+          "actor_type": "RepositoryRole",
+          "actor_id": "maintain",
+          "bypass_mode": "pull_request_only"
+        }
+      ],
+      "conditions": {
+        "ref_name": {
+          "include": ["main"],
+          "exclude": []
+        }
+      },
+      "rules": [
+        {
+          "type": "creation",
+          "parameters": {}
+        },
+        {
+          "type": "update",
+          "parameters": {
+            "update_allows_fetch_and_merge": false
+          }
+        },
+        {
+          "type": "deletion",
+          "parameters": {}
+        },
+        {
+          "type": "non_fast_forward",
+          "parameters": {}
+        },
+        {
+          "type": "pull_request",
+          "parameters": {
+            "dismiss_stale_reviews_on_push": true,
+            "require_code_owner_review": false,
+            "require_last_push_approval": false,
+            "required_approving_review_count": 1,
+            "required_review_thread_resolution": true
+          }
+        },
+        {
+          "type": "required_status_checks",
+          "parameters": {
+            "required_status_checks": [
+              {
+                "context": "build-and-deploy",
+                "integration_id": null
+              }
+            ],
+            "strict_required_status_checks_policy": true
+          }
+        },
+        {
+          "type": "commit_message_pattern",
+          "parameters": {
+            "operator": "contains",
+            "pattern": ""
+          }
+        },
+        {
+          "type": "commit_author_email_pattern",
+          "parameters": {
+            "operator": "contains",
+            "pattern": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "CI/CD Checks on Pull Requests",
+      "description": "Runs CI/CD pipeline on every pull request and prevents merge until all checks pass.",
+      "target": "branch",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "include": ["main"],
+          "exclude": []
+        }
+      },
+      "rules": [
+        {
+          "type": "required_status_checks",
+          "parameters": {
+            "required_status_checks": [
+              {
+                "context": "build-and-deploy",
+                "integration_id": null
+              }
+            ],
+            "strict_required_status_checks_policy": true
+          }
+        },
+        {
+          "type": "pull_request",
+          "parameters": {
+            "dismiss_stale_reviews_on_push": true,
+            "require_code_owner_review": false,
+            "require_last_push_approval": false,
+            "required_approving_review_count": 1,
+            "required_review_thread_resolution": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Deployment Rules - Main Branch Only",
+      "description": "Deployment workflow only runs after successful merge to main branch with all checks passing.",
+      "target": "branch",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "include": ["main"],
+          "exclude": []
+        }
+      },
+      "rules": [
+        {
+          "type": "required_status_checks",
+          "parameters": {
+            "required_status_checks": [
+              {
+                "context": "build-and-deploy",
+                "integration_id": null
+              }
+            ],
+            "strict_required_status_checks_policy": true
+          }
+        }
+      ]
+    }
+  ]
+}
