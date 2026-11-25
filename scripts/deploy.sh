@@ -44,7 +44,7 @@ echo "🐳 Starting new container..."
 docker run -d \
     --name "$CONTAINER_NAME" \
     --restart unless-stopped \
-    -p 3000:3000 \
+    -p 3500:3000 \
     --env-file "$ENV_FILE" \
     --healthcheck-interval 30s \
     --healthcheck-timeout 3s \
@@ -67,7 +67,7 @@ if docker ps --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
     echo "📊 Container status:"
     docker ps --filter "name=$CONTAINER_NAME" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
     echo ""
-    echo "🔗 Application running at http://localhost:3000"
+    echo "🔗 Application running at http://localhost:3500"
 else
     echo "❌ Deployment failed - container is not running"
     echo "📋 Container logs:"
