@@ -56,11 +56,11 @@ sources:[
      baseUrl:"https://pjsafarisserver-production.up.railway.app/api"
     },
     db:{
-        host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password:process.env.DB_PASS,
-      database: process.env.DB_DATABASE
+        host: '',
+      port: '',
+      user: '',
+      password: '',
+      database: ''
     },
     cld:{
     name:process.env.CLOUDINARY_CLOUD_NAME,

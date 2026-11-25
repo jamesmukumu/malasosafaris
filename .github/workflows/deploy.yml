@@ -50,11 +50,11 @@ jobs:
             cd /tmp/malasoafricasafarisclient-deploy
             chmod +x scripts/deploy.sh
             ./scripts/deploy.sh malasoafricasafarisclient:${{ github.sha }} ${{ secrets.DEPLOYMENT_PATH }} \
-              DB_HOST="${{ secrets.DB_HOST }}" \
-              DB_PORT="${{ secrets.DB_PORT }}" \
-              DB_USER="${{ secrets.DB_USER }}" \
-              DB_PASS="${{ secrets.DB_PASS }}" \
-              DB_DATABASE="${{ secrets.DB_DATABASE }}" \
+              NUXT_DB_HOST="${{ secrets.DB_HOST }}" \
+              NUXT_DB_PORT="${{ secrets.DB_PORT }}" \
+              NUXT_DB_USER="${{ secrets.DB_USER }}" \
+              NUXT_DB_PASSWORD="${{ secrets.DB_PASS }}" \
+              NUXT_DB_DATABASE="${{ secrets.DB_DATABASE }}" \
               CLOUDINARY_CLOUD_NAME="${{ secrets.CLOUDINARY_CLOUD_NAME }}" \
               CLOUDINARY_API_KEY="${{ secrets.CLOUDINARY_API_KEY }}" \
               CLOUDINARY_API_SECRET="${{ secrets.CLOUDINARY_API_SECRET }}"
