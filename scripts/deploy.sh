@@ -46,10 +46,6 @@ docker run -d \
     --restart unless-stopped \
     -p 3500:3000 \
     --env-file "$ENV_FILE" \
-    --healthcheck-interval 30s \
-    --healthcheck-timeout 3s \
-    --healthcheck-retries 3 \
-    --healthcheck-start-period 40s \
     "$IMAGE_TAG"
 
 # Wait for container to be healthy
